@@ -26,8 +26,7 @@ struct ContentView: View {
             
             CDSButton(buttonText,
                       style: .primary(type: .iconed(position: .left(name: "plus")),
-                                      size: .infinity,
-                                      disabled: false)) {
+                                      size: .infinity)) {
                 buttonDisabled.toggle()
                 print("Deu certo")
             }
