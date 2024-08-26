@@ -9,8 +9,7 @@ import SwiftUI
 
 class CDSButtonStyleBuilder {
     // MARK: - Typealiases
-    
-    typealias ButtonState = CDSButtonStyle.CDSButtonState
+
     typealias ButtonType = CDSButtonStyle.CDSButtonType
     typealias IconPosition = ButtonType.CDSButtonIconPosition
     typealias ButtonSize = CDSButtonStyle.CDSButtonSize
@@ -52,7 +51,10 @@ class CDSButtonStyleBuilder {
     }
     
     public var disabled: Bool {
-        return state == .disabled
+        switch style {
+        case .primary(_, _, let disabled), .secondary(_, _, let disabled):
+            return disabled
+        }
     }
     
     var background: Color {
@@ -70,13 +72,6 @@ class CDSButtonStyleBuilder {
     }
     
     // MARK: - Private View Properties
-    
-    private var state: ButtonState {
-        switch style {
-        case .primary(_, _, let state), .secondary(_, _, let state):
-            return state
-        }
-    }
     
     private var type: ButtonType {
         switch style {
@@ -102,17 +97,11 @@ class CDSButtonStyleBuilder {
     }
     
     private var primaryBackground: Color {
-        switch state {
-        case .enabled: .green
-        case .disabled: Color(uiColor: .lightGray)
-        }
+        disabled ? Color(uiColor: .lightGray) : .green
     }
     
     private var secondaryForeground: Color {
-        switch state {
-        case .enabled: .green
-        case .disabled: Color(uiColor: .lightGray)
-        }
+        disabled ? Color(uiColor: .lightGray) : .green
     }
     
     // MARK: - View Builders

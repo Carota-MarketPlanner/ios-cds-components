@@ -11,30 +11,31 @@ import CDSComponents
 struct ContentView: View {
     
     @State var buttonText: String = "Clique aqui"
-    @State var buttonState: CDSButtonStyle.CDSButtonState = .enabled
+    @State var buttonDisabled: Bool = false
     
     var body: some View {
         VStack {
             CDSButton(buttonText,
                       style: .primary(type: .iconed(position: .right(name: "plus.circle")),
                                       size: .infinity,
-                                      state: buttonState)) {
+                                      disabled: buttonDisabled)) {
                 print("Deu certo")
-                buttonState = .disabled
+                buttonDisabled = true
             }
                                       
             
             CDSButton(buttonText,
                       style: .primary(type: .iconed(position: .left(name: "plus")),
                                       size: .infinity,
-                                      state: .enabled)) {
+                                      disabled: false)) {
+                buttonDisabled.toggle()
                 print("Deu certo")
             }
             
             CDSButton(buttonText,
                       style: .secondary(type: .default,
                                         size: .infinity,
-                                        state: .disabled)) {
+                                        disabled: true)) {
                 print("Deu certo")
             }
             
