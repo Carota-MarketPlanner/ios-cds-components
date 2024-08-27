@@ -19,11 +19,11 @@ class CDSButtonStyleBuilder {
     
     // MARK: - Public Properties
     
-    var padding: CGFloat { theme.size.buttonPadding }
-    var height: CGFloat  { theme.size.buttonHeight }
-    var cornerRadius: CGFloat { theme.size.buttonCornerRadius }
-    var lineWidht: CGFloat { theme.size.buttonLineWidht }
-    var spacing: CGFloat { theme.size.buttonSpacing }
+    var padding: CGFloat { theme.sizes.buttonPadding }
+    var height: CGFloat  { theme.sizes.buttonHeight }
+    var cornerRadius: CGFloat { theme.sizes.buttonCornerRadius }
+    var lineWidht: CGFloat { theme.sizes.buttonLineWidht }
+    var spacing: CGFloat { theme.sizes.buttonSpacing }
     
     // MARK: - Private Properties
     
@@ -128,7 +128,7 @@ class CDSButtonStyleBuilder {
         Image(systemName: name)
             .resizable()
             .aspectRatio(contentMode: .fit)
-            .frame(height: theme.size.buttonIconHeight)
+            .frame(height: theme.sizes.buttonIconHeight)
     }
     
     @ViewBuilder

@@ -11,7 +11,7 @@ import SwiftUI
 public class CDSCarotaTheme: CDSTheme {
     public init() {}
     public var colors = CDSCarotaColor.shared
-    public var size = CDSCarotaSize.shared
+    public var sizes = CDSCarotaSize.shared
 }
 
 public class CDSCarotaColor: CDSColor {

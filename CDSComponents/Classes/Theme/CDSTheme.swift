@@ -9,5 +9,5 @@ import SwiftUI
 
 public protocol CDSTheme {
     var colors: CDSColor { get }
-    var size: CDSSize { get }
+    var sizes: CDSSize { get }
 }
