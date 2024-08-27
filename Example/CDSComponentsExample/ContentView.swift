@@ -49,7 +49,7 @@ struct ContentView: View {
             }
             
         }
-        .padding(24)
+        .padding(theme.size.margin)
         .background(theme.colors.white.color)
     }
 }

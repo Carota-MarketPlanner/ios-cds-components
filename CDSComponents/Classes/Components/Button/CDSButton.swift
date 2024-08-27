@@ -31,7 +31,7 @@ public struct CDSButton: View {
                         .frame(maxWidth: styleBuilder.textSize, alignment: .leading)
                 }
             }
-            .padding(.horizontal, styleBuilder.horizontalPadding)
+            .padding(.horizontal, styleBuilder.padding)
             .frame(maxWidth: styleBuilder.sizeValue)
             .frame(height: styleBuilder.height)
             .background(styleBuilder.background)

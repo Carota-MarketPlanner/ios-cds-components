@@ -9,19 +9,12 @@ import SwiftUI
 
 public protocol CDSColor {
     var black: Hex { get }
-    
     var darkGray: Hex { get }
-    
     var gray: Hex { get }
-    
     var lightGray: Hex { get }
-    
     var white: Hex { get }
-    
     var green: Hex { get }
-    
     var yellow: Hex { get }
-    
     var orange: Hex { get }
 }
 
