@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		D571FF4658CD0BEFBCA28199 /* Pods_CDSComponents_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B53F581598B33319C4F3C7A /* Pods_CDSComponents_Example.framework */; };
+		DE044BF92C7D63D400368B81 /* CarotaTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE044BF82C7D63D400368B81 /* CarotaTheme.swift */; };
 		DE99C1302C570F60006AC24E /* CDSComponentsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE99C12F2C570F60006AC24E /* CDSComponentsApp.swift */; };
 		DE99C1322C570F60006AC24E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE99C1312C570F60006AC24E /* ContentView.swift */; };
 		DE99C1342C570F61006AC24E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DE99C1332C570F61006AC24E /* Assets.xcassets */; };
@@ -18,6 +19,7 @@
 		1B53F581598B33319C4F3C7A /* Pods_CDSComponents_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CDSComponents_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA6237DB7A6B4B1CDAC61352 /* Pods-CDSComponents_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CDSComponents_Example.debug.xcconfig"; path = "Target Support Files/Pods-CDSComponents_Example/Pods-CDSComponents_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		B4BD8207D38228D9ABBE3F01 /* Pods-CDSComponents_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CDSComponents_Example.release.xcconfig"; path = "Target Support Files/Pods-CDSComponents_Example/Pods-CDSComponents_Example.release.xcconfig"; sourceTree = "<group>"; };
+		DE044BF82C7D63D400368B81 /* CarotaTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarotaTheme.swift; sourceTree = "<group>"; };
 		DE99C12C2C570F60006AC24E /* CDSComponents_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CDSComponents_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE99C12F2C570F60006AC24E /* CDSComponentsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDSComponentsApp.swift; sourceTree = "<group>"; };
 		DE99C1312C570F60006AC24E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -54,6 +56,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		DE044BF72C7D63AC00368B81 /* CarotaTheme */ = {
+			isa = PBXGroup;
+			children = (
+				DE044BF82C7D63D400368B81 /* CarotaTheme.swift */,
+			);
+			path = CarotaTheme;
+			sourceTree = "<group>";
+		};
 		DE99C1232C570F60006AC24E = {
 			isa = PBXGroup;
 			children = (
@@ -75,6 +85,7 @@
 		DE99C12E2C570F60006AC24E /* CDSComponentsExample */ = {
 			isa = PBXGroup;
 			children = (
+				DE044BF72C7D63AC00368B81 /* CarotaTheme */,
 				DE99C12F2C570F60006AC24E /* CDSComponentsApp.swift */,
 				DE99C1312C570F60006AC24E /* ContentView.swift */,
 				DE99C1332C570F61006AC24E /* Assets.xcassets */,
@@ -206,6 +217,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DE99C1322C570F60006AC24E /* ContentView.swift in Sources */,
+				DE044BF92C7D63D400368B81 /* CarotaTheme.swift in Sources */,
 				DE99C1302C570F60006AC24E /* CDSComponentsApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
