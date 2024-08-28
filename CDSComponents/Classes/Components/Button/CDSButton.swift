@@ -29,6 +29,7 @@ public struct CDSButton: View {
                 styleBuilder.getViewContent {
                     Text(label)
                         .frame(maxWidth: styleBuilder.textSize, alignment: .leading)
+                        .font(styleBuilder.font)
                 }
             }
             .padding(.horizontal, styleBuilder.padding)

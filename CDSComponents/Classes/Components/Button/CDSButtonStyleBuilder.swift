@@ -24,6 +24,7 @@ class CDSButtonStyleBuilder {
     var cornerRadius: CGFloat { theme.sizes.buttonCornerRadius }
     var lineWidht: CGFloat { theme.sizes.buttonLineWidht }
     var spacing: CGFloat { theme.sizes.buttonSpacing }
+    var font: Font { theme.fonts.buttonFont.font }
     
     // MARK: - Private Properties
     

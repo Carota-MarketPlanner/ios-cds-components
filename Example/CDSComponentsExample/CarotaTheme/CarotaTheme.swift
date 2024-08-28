@@ -10,8 +10,10 @@ import SwiftUI
 
 public class CDSCarotaTheme: CDSTheme {
     public init() {}
+    
     public var colors = CDSCarotaColor.shared
     public var sizes = CDSCarotaSize.shared
+    public var fonts = CDSCarotaText.shared
 }
 
 public class CDSCarotaColor: CDSColor {
@@ -41,4 +43,12 @@ public class CDSCarotaSize: CDSSize {
     public var buttonCornerRadius: CGFloat = 16
     public var buttonLineWidht: CGFloat = 2
     public var buttonSpacing: CGFloat = 18
+}
+
+public class CDSCarotaText: CDSText {
+    public static var shared: CDSText = CDSCarotaText()
+    
+    private init() {}
+    
+    public var buttonFont = CDSFont("Poppins-Medium.ttf", size: 18)
 }
