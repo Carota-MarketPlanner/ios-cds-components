@@ -31,7 +31,6 @@ struct ButtonStack: View {
                                       size: .infinity,
                                       disabled: state)) {
                 iconButtonState.toggle()
-                print("Deu certo")
             }
             
             CDSButton(text,
@@ -39,7 +38,6 @@ struct ButtonStack: View {
                                       size: .infinity,
                                       disabled: state)) {
                 iconButtonState.toggle()
-                print("Deu certo")
             }
             
             CDSButton(text,
@@ -47,7 +45,6 @@ struct ButtonStack: View {
                                         size: .infinity,
                                         disabled: state)) {
                 iconButtonState.toggle()
-                print("Deu certo")
             }
         }
     }
