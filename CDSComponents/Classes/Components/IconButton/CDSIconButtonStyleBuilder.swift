@@ -37,7 +37,7 @@ class CDSIconButtonStyleBuilder {
     }
     
     var buttonPadding: CGFloat {
-        size == .normal ? theme.sizes.iconButtonPadding : theme.sizes.iconButtonSmallPadding
+        size == .normal ? theme.sizes.buttonPadding : theme.sizes.buttonSmallPadding
     }
     
     var lineWidht: CGFloat {

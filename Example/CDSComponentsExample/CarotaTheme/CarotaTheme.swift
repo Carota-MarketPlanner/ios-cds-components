@@ -37,7 +37,6 @@ public class CDSCarotaSize: CDSSize {
     private init() {}
     
     public var margin: CGFloat = 24
-    public var buttonPadding: CGFloat = 24
     public var buttonSize: CGFloat = 58
     public var buttonSmallSize: CGFloat = 45
     public var buttonIconSize: CGFloat = 18
@@ -47,9 +46,8 @@ public class CDSCarotaSize: CDSSize {
     public var buttonLineWidht: CGFloat = 2
     public var buttonSmallLineWidht: CGFloat = 1.5
     public var buttonSpacing: CGFloat = 18
-    
-    public var iconButtonPadding: CGFloat = 20
-    public var iconButtonSmallPadding: CGFloat = 15
+    public var buttonPadding: CGFloat = 20
+    public var buttonSmallPadding: CGFloat = 15
 }
 
 public class CDSCarotaText: CDSText {

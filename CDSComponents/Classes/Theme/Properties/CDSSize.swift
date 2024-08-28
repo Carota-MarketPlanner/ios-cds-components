@@ -11,7 +11,6 @@ public protocol CDSSize {
     // Global
     var margin: CGFloat { get }
     // Button
-    var buttonPadding: CGFloat { get }
     var buttonSize: CGFloat { get }
     var buttonSmallSize: CGFloat { get }
     var buttonIconSize: CGFloat { get }
@@ -21,7 +20,6 @@ public protocol CDSSize {
     var buttonLineWidht: CGFloat { get }
     var buttonSmallLineWidht: CGFloat { get }
     var buttonSpacing: CGFloat { get }
-    // IconButton
-    var iconButtonPadding: CGFloat { get }
-    var iconButtonSmallPadding: CGFloat { get }
+    var buttonPadding: CGFloat { get }
+    var buttonSmallPadding: CGFloat { get }
 }
