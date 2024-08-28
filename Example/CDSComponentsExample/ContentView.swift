@@ -13,6 +13,8 @@ struct ContentView: View {
     
     @State var buttonState: Bool = false
     @State var buttonIconState: Bool = false
+    @State var textFieldText: String = ""
+    @State var textFieldText2: String = ""
     
     var text: String {
         buttonIconState ? "Habilitar" : "Desabilitar"
@@ -25,6 +27,13 @@ struct ContentView: View {
             ButtonStack(text: text,
                         state: buttonState,
                         iconButtonState: $buttonIconState)
+            
+            Spacer()
+            
+            VStack(spacing: 33) {
+                CDSTextField("Name", text: $textFieldText)
+                CDSTextField("Password", text: $textFieldText2)
+            }
             
             Spacer()
             

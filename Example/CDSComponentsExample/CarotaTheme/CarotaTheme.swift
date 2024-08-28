@@ -51,9 +51,15 @@ public class CDSCarotaSize: CDSSize {
 }
 
 public class CDSCarotaText: CDSText {
+    public enum Fonts: String {
+        case poppinsMediun = "Poppins-Medium.ttf"
+        case poppinsSemiBold = "Poppins-SemiBold.ttf"
+    }
+    
     public static var shared: CDSText = CDSCarotaText()
     
     private init() {}
     
-    public var buttonFont = CDSFont("Poppins-Medium.ttf", size: 18)
+    public var buttonFont = CDSFont(Fonts.poppinsMediun.rawValue, size: 18)
+    public var textFieldFont = CDSFont(Fonts.poppinsMediun.rawValue, size: 16)
 }
