@@ -38,7 +38,7 @@ public struct CDSButton: View {
             .background(styleBuilder.background)
             .foregroundColor(styleBuilder.foregroundColor)
             .cornerRadius(styleBuilder.cornerRadius)
-            .overlay{ styleBuilder.getOverlay() }
+            .overlay { styleBuilder.getOverlay() }
         }
         .disabled(styleBuilder.disabled)
     }

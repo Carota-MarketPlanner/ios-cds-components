@@ -11,47 +11,35 @@ import CDSComponents
 struct ContentView: View {
     @CDSThemeCore var theme: CDSTheme
     
-    @State var buttonDisabled: Bool = false
+    @State var buttonState: Bool = false
+    @State var buttonIconState: Bool = false
     
     var text: String {
-        buttonDisabled ? "Habilitar" : "Desabilitar"
-    }
-    
-    var icon: String {
-        buttonDisabled ? "lightswitch.off" : "rectangle.portrait.and.arrow.right"
+        buttonIconState ? "Habilitar" : "Desabilitar"
     }
     
     var body: some View {
         VStack {
             Spacer()
             
-            CDSButton("Button",
-                      style: .primary(type: .iconed(position: .right(name: "plus.circle")),
-                                      size: .infinity,
-                                      disabled: buttonDisabled)) {
-                
-                print("Deu certo")
-            }
-            
-            CDSButton("Button",
-                      style: .secondary(type: .default,
-                                        size: .infinity,
-                                        disabled: buttonDisabled)) {
-                print("Deu certo")
-            }
+            ButtonStack(text: text,
+                        state: buttonState,
+                        iconButtonState: $buttonIconState)
             
             Spacer()
             
-            CDSButton(text,
-                      style: .primary(type: .iconed(position: .left(name: icon)),
-                                      size: .infinity)) {
-                buttonDisabled.toggle()
-            }
+            IconButtonStack(state: buttonIconState,
+                            buttonState: $buttonState,
+                            size: .normal)
             
+            IconButtonStack(state: buttonIconState,
+                            buttonState: $buttonState,
+                            size: .small)
         }
         .padding(theme.sizes.margin)
         .background(theme.colors.white.color)
     }
+        
 }
 
 #Preview {

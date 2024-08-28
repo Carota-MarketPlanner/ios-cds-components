@@ -20,7 +20,7 @@ class CDSButtonStyleBuilder {
     // MARK: - Public Properties
     
     var padding: CGFloat { theme.sizes.buttonPadding }
-    var height: CGFloat  { theme.sizes.buttonHeight }
+    var height: CGFloat  { theme.sizes.buttonSize }
     var cornerRadius: CGFloat { theme.sizes.buttonCornerRadius }
     var lineWidht: CGFloat { theme.sizes.buttonLineWidht }
     var spacing: CGFloat { theme.sizes.buttonSpacing }
@@ -118,7 +118,7 @@ class CDSButtonStyleBuilder {
         switch style {
         case .secondary:
             RoundedRectangle(cornerRadius: cornerRadius)
-                .stroke(foregroundColor, lineWidth: lineWidht)
+                .stroke(primaryBackground, lineWidth: lineWidht)
         default:
             EmptyView()
         }
@@ -129,7 +129,7 @@ class CDSButtonStyleBuilder {
         Image(systemName: name)
             .resizable()
             .aspectRatio(contentMode: .fit)
-            .frame(height: theme.sizes.buttonIconHeight)
+            .frame(maxHeight: theme.sizes.buttonIconSize)
     }
     
     @ViewBuilder
