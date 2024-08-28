@@ -118,7 +118,7 @@ class CDSButtonStyleBuilder {
         switch style {
         case .secondary:
             RoundedRectangle(cornerRadius: cornerRadius)
-                .stroke(foregroundColor, lineWidth: lineWidht)
+                .stroke(primaryBackground, lineWidth: lineWidht)
         default:
             EmptyView()
         }

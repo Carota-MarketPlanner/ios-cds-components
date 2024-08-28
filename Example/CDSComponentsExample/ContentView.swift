@@ -12,12 +12,17 @@ struct ContentView: View {
     @CDSThemeCore var theme: CDSTheme
     
     @State var buttonDisabled: Bool = false
+    @State var buttonIconDisabled: Bool = false
     
     var text: String {
         buttonDisabled ? "Habilitar" : "Desabilitar"
     }
     
-    var icon: String {
+    var buttonIcon: String {
+        buttonIconDisabled ? "lightswitch.off" : "lightswitch.on.fill"
+    }
+    
+    var iconButonIcon: String {
         buttonDisabled ? "lightswitch.off" : "lightswitch.on.fill"
     }
     
@@ -26,10 +31,10 @@ struct ContentView: View {
             Spacer()
             
             CDSButton("Button",
-                      style: .primary(type: .iconed(position: .right(name: "plus")),
+                      style: .primary(type: .iconed(position: .right(name: buttonIcon)),
                                       size: .infinity,
                                       disabled: buttonDisabled)) {
-                
+                buttonIconDisabled.toggle()
                 print("Deu certo")
             }
             
@@ -37,6 +42,7 @@ struct ContentView: View {
                       style: .secondary(type: .default,
                                         size: .infinity,
                                         disabled: buttonDisabled)) {
+                buttonIconDisabled.toggle()
                 print("Deu certo")
             }
             
@@ -45,11 +51,23 @@ struct ContentView: View {
             HStack {
                 Spacer()
                 
-                CDSIconButton(icon: icon) {
+                CDSIconButton(icon: iconButonIcon,
+                              style: .primary(type: .default(disabled: buttonIconDisabled))) {
                     buttonDisabled.toggle()
                 }
                 
-                CDSIconButton(icon: icon) {
+                CDSIconButton(icon: iconButonIcon,
+                              style: .secondary(type: .default(disabled: buttonIconDisabled))) {
+                    buttonDisabled.toggle()
+                }
+                
+                CDSIconButton(icon: iconButonIcon,
+                              style: .primary(type: .stroked(disabled: buttonIconDisabled))) {
+                    buttonDisabled.toggle()
+                }
+                
+                CDSIconButton(icon: iconButonIcon,
+                              style: .secondary(type: .stroked(disabled: buttonIconDisabled))) {
                     buttonDisabled.toggle()
                 }
             }
