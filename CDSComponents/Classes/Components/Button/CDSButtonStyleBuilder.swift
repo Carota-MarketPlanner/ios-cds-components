@@ -8,6 +8,9 @@
 import SwiftUI
 
 class CDSButtonStyleBuilder {
+    
+    @CDSThemeCore var theme: CDSTheme
+    
     // MARK: - Typealiases
 
     typealias ButtonType = CDSButtonStyle.CDSButtonType
@@ -16,17 +19,15 @@ class CDSButtonStyleBuilder {
     
     // MARK: - Public Properties
     
-    let horizontalPadding: CGFloat = 24
-    let verticalPadding: CGFloat  = 20
-    let height: CGFloat  = 58
-    let cornerRadius: CGFloat  = 16
-    let lineWidht: CGFloat = 2
-    let spacing: CGFloat = 20
+    var padding: CGFloat { theme.sizes.buttonPadding }
+    var height: CGFloat  { theme.sizes.buttonHeight }
+    var cornerRadius: CGFloat { theme.sizes.buttonCornerRadius }
+    var lineWidht: CGFloat { theme.sizes.buttonLineWidht }
+    var spacing: CGFloat { theme.sizes.buttonSpacing }
+    var font: Font { theme.fonts.buttonFont.font }
     
     // MARK: - Private Properties
     
-    private var secondaryBackground: Color = .clear
-    private var primaryForeground: Color = .white
     private let style: CDSButtonStyle
     
     // MARK: - Initializer
@@ -97,12 +98,18 @@ class CDSButtonStyleBuilder {
     }
     
     private var primaryBackground: Color {
-        disabled ? Color(uiColor: .lightGray) : .green
+        disabled ? theme.colors.lightGray.color : theme.colors.green.color
     }
     
     private var secondaryForeground: Color {
-        disabled ? Color(uiColor: .lightGray) : .green
+        disabled ? theme.colors.gray.color : theme.colors.green.color
     }
+    
+    private var primaryForeground: Color {
+        disabled ? theme.colors.gray.color : theme.colors.white.color
+    }
+    
+    private var secondaryBackground: Color = .clear
     
     // MARK: - View Builders
     
@@ -120,6 +127,9 @@ class CDSButtonStyleBuilder {
     @ViewBuilder
     private func iconView(name: String) -> some View {
         Image(systemName: name)
+            .resizable()
+            .aspectRatio(contentMode: .fit)
+            .frame(height: theme.sizes.buttonIconHeight)
     }
     
     @ViewBuilder

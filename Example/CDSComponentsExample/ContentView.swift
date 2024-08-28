@@ -9,38 +9,48 @@ import SwiftUI
 import CDSComponents
 
 struct ContentView: View {
+    @CDSThemeCore var theme: CDSTheme
     
-    @State var buttonText: String = "Clique aqui"
     @State var buttonDisabled: Bool = false
+    
+    var text: String {
+        buttonDisabled ? "Habilitar" : "Desabilitar"
+    }
+    
+    var icon: String {
+        buttonDisabled ? "lightswitch.off" : "rectangle.portrait.and.arrow.right"
+    }
     
     var body: some View {
         VStack {
-            CDSButton(buttonText,
+            Spacer()
+            
+            CDSButton("Button",
                       style: .primary(type: .iconed(position: .right(name: "plus.circle")),
                                       size: .infinity,
                                       disabled: buttonDisabled)) {
-                print("Deu certo")
-                buttonDisabled = true
-            }
-                                      
-            
-            CDSButton(buttonText,
-                      style: .primary(type: .iconed(position: .left(name: "plus")),
-                                      size: .infinity,
-                                      disabled: false)) {
-                buttonDisabled.toggle()
+                
                 print("Deu certo")
             }
             
-            CDSButton(buttonText,
+            CDSButton("Button",
                       style: .secondary(type: .default,
                                         size: .infinity,
-                                        disabled: true)) {
+                                        disabled: buttonDisabled)) {
                 print("Deu certo")
+            }
+            
+            Spacer()
+            
+            CDSButton(text,
+                      style: .primary(type: .iconed(position: .left(name: icon)),
+                                      size: .infinity)) {
+                buttonDisabled.toggle()
             }
             
         }
-        .padding(24)
+        .padding(theme.sizes.margin)
+        .background(theme.colors.white.color)
     }
 }
 

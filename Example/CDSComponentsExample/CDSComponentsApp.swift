@@ -6,9 +6,15 @@
 //
 
 import SwiftUI
+import CDSComponents
 
 @main
 struct CDSComponentsApp: App {
+    
+    init() {
+        CDSThemeCore.setTheme(theme: CDSCarotaTheme())
+    }
+    
     var body: some Scene {
         WindowGroup {
             ContentView()
