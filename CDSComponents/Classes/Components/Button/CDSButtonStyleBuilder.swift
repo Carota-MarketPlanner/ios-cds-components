@@ -129,7 +129,7 @@ class CDSButtonStyleBuilder {
         Image(systemName: name)
             .resizable()
             .aspectRatio(contentMode: .fit)
-            .frame(height: theme.sizes.buttonIconHeight)
+            .frame(maxHeight: theme.sizes.buttonIconHeight)
     }
     
     @ViewBuilder

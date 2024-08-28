@@ -18,7 +18,7 @@ struct ContentView: View {
     }
     
     var icon: String {
-        buttonDisabled ? "lightswitch.off" : "rectangle.portrait.and.arrow.right"
+        buttonDisabled ? "lightswitch.off" : "lightswitch.on.fill"
     }
     
     var body: some View {
@@ -26,7 +26,7 @@ struct ContentView: View {
             Spacer()
             
             CDSButton("Button",
-                      style: .primary(type: .iconed(position: .right(name: "plus.circle")),
+                      style: .primary(type: .iconed(position: .right(name: "plus")),
                                       size: .infinity,
                                       disabled: buttonDisabled)) {
                 
@@ -42,10 +42,16 @@ struct ContentView: View {
             
             Spacer()
             
-            CDSButton(text,
-                      style: .primary(type: .iconed(position: .left(name: icon)),
-                                      size: .infinity)) {
-                buttonDisabled.toggle()
+            HStack {
+                Spacer()
+                
+                CDSIconButton(icon: icon) {
+                    buttonDisabled.toggle()
+                }
+                
+                CDSIconButton(icon: icon) {
+                    buttonDisabled.toggle()
+                }
             }
             
         }

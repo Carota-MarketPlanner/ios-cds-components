@@ -64,8 +64,8 @@
 		DE044BF72C7D63AC00368B81 /* CarotaTheme */ = {
 			isa = PBXGroup;
 			children = (
-				DE044C042C7E9CE300368B81 /* Fonts */,
 				DE044BF82C7D63D400368B81 /* CarotaTheme.swift */,
+				DE044C042C7E9CE300368B81 /* Fonts */,
 			);
 			path = CarotaTheme;
 			sourceTree = "<group>";
