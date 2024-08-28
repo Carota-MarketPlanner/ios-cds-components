@@ -20,7 +20,7 @@ class CDSButtonStyleBuilder {
     // MARK: - Public Properties
     
     var padding: CGFloat { theme.sizes.buttonPadding }
-    var height: CGFloat  { theme.sizes.buttonHeight }
+    var height: CGFloat  { theme.sizes.buttonSize }
     var cornerRadius: CGFloat { theme.sizes.buttonCornerRadius }
     var lineWidht: CGFloat { theme.sizes.buttonLineWidht }
     var spacing: CGFloat { theme.sizes.buttonSpacing }
@@ -129,7 +129,7 @@ class CDSButtonStyleBuilder {
         Image(systemName: name)
             .resizable()
             .aspectRatio(contentMode: .fit)
-            .frame(maxHeight: theme.sizes.buttonIconHeight)
+            .frame(maxHeight: theme.sizes.buttonIconSize)
     }
     
     @ViewBuilder

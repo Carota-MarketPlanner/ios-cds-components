@@ -72,6 +72,30 @@ struct ContentView: View {
                 }
             }
             
+            HStack {
+                Spacer()
+                
+                CDSIconButton(icon: iconButonIcon,
+                              style: .primary(type: .default(size: .small, disabled: buttonIconDisabled))) {
+                    buttonDisabled.toggle()
+                }
+                
+                CDSIconButton(icon: iconButonIcon,
+                              style: .secondary(type: .default(size: .small, disabled: buttonIconDisabled))) {
+                    buttonDisabled.toggle()
+                }
+                
+                CDSIconButton(icon: iconButonIcon,
+                              style: .primary(type: .stroked(size: .small, disabled: buttonIconDisabled))) {
+                    buttonDisabled.toggle()
+                }
+                
+                CDSIconButton(icon: iconButonIcon,
+                              style: .secondary(type: .stroked(size: .small, disabled: buttonIconDisabled))) {
+                    buttonDisabled.toggle()
+                }
+            }
+            
         }
         .padding(theme.sizes.margin)
         .background(theme.colors.white.color)

@@ -16,15 +16,6 @@ class CDSIconButtonStyleBuilder {
     typealias ButtonType = CDSIconButtonStyle.CDSIconButtonType
     typealias ButtonSize = ButtonType.CDSIconButtonSize
     
-    // MARK: - Public Properties
-    
-    var cornerRadius: CGFloat {
-        switch size {
-        case .normal: theme.sizes.buttonCornerRadius
-        case .small: 14
-        }
-    }
-    
     // MARK: - Private Properties
     
     private let style: CDSIconButtonStyle
@@ -36,6 +27,26 @@ class CDSIconButtonStyleBuilder {
     }
     
     // MARK: - Public View Properties
+    
+    var buttonSize: CGFloat {
+        size == .normal ? theme.sizes.buttonSize : theme.sizes.buttonSmallSize
+    }
+    
+    var buttonIconSize: CGFloat {
+        size == .normal ? theme.sizes.buttonIconSize : theme.sizes.buttonIconSmallSize
+    }
+    
+    var buttonPadding: CGFloat {
+        size == .normal ? theme.sizes.iconButtonPadding : theme.sizes.iconButtonSmallPadding
+    }
+    
+    var lineWidht: CGFloat {
+        size == .normal ? theme.sizes.buttonLineWidht : theme.sizes.buttonSmallLineWidht
+    }
+    
+    var cornerRadius: CGFloat {
+        size == .normal ? theme.sizes.buttonCornerRadius : theme.sizes.buttonSmallCornerRadius
+    }
     
     var background: Color {
         switch style {
@@ -138,7 +149,7 @@ class CDSIconButtonStyleBuilder {
         switch type {
         case .stroked:
             RoundedRectangle(cornerRadius: cornerRadius)
-                .stroke(theme.colors.lightGray.color, lineWidth: 2)
+                .stroke(theme.colors.lightGray.color, lineWidth: lineWidht)
         default:
             EmptyView()
         }
