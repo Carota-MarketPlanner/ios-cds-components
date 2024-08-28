@@ -23,7 +23,6 @@ public struct CDSIconButton: View {
         self.action = action
     }
     
-    
     public var body: some View {
         Button(action: action) {
             HStack {
@@ -41,6 +40,5 @@ public struct CDSIconButton: View {
             .overlay { styleBuilder.getOverlay() }
         }
         .disabled(styleBuilder.disabled)
-        
     }
 }
