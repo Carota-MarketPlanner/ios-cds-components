@@ -8,36 +8,49 @@
 import SwiftUI
 
 public struct CDSTextField: View {
-    @CDSThemeCore var theme: CDSTheme
-    
     @FocusState var isFocused: Bool
     @Binding var text: String
+    @ObservedObject var styleBuilder: CDSTextFieldStyleBuilder
     
     var title: String
     
-    public init(_ title: String, text: Binding<String>) {
+    public init(
+        _ title: String,
+        text: Binding<String>,
+        type: CDSTextFieldType = .text,
+        state: CDSTextFieldState = .default
+    ) {
         _text = text
         self.title = title
+        self.styleBuilder = CDSTextFieldStyleBuilder(type: type, state: state)
     }
     
     public var body: some View {
-        VStack(alignment: .leading, spacing: 11) {
-            TFAnimatedTitle(
+        VStack(alignment: .leading, spacing: styleBuilder.spacing) {
+            CDSAnimatedTitle(
                 title: title,
                 selected: !isFocused && text.isEmpty
             )
-            .font(theme.fonts.textFieldFont.font)
-            .foregroundColor(theme.colors.darkGray.color)
+            .font(styleBuilder.textFieldFont)
+            .foregroundColor(styleBuilder.titleForeground)
             
-            TextField(String(), text: _text)
-                .focused($isFocused)
-                .font(theme.fonts.textFieldFont.font)
+            HStack {
+                Group {
+                    styleBuilder.textField(_text, state: $isFocused)
+                }
+                .font(styleBuilder.textFieldFont)
+                .foregroundColor(styleBuilder.textForeground)
+                
+                if !text.isEmpty { styleBuilder.eyeButton }
+            }
+            .frame(height: styleBuilder.height)
             
-//            SecureField(String(), text: _text)
-//                .focused($isFocused)
-//                .font(theme.fonts.textFieldFont.font)
-            
-            Rectangle().frame(height: 1).foregroundColor(isFocused ? theme.colors.green.color : theme.colors.darkGray.color)
+            Rectangle()
+                .frame(height: styleBuilder.lineWidth)
+                .foregroundColor(styleBuilder.borderColor(for: isFocused))
+        }
+        .onTapGesture {
+            isFocused = true
         }
     }
 }

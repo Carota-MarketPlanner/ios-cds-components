@@ -98,11 +98,11 @@ class CDSButtonStyleBuilder {
     }
     
     private var primaryBackground: Color {
-        disabled ? theme.colors.lightGray.color : theme.colors.green.color
+        disabled ? theme.colors.lightGray.color : theme.colors.primary.color
     }
     
     private var secondaryForeground: Color {
-        disabled ? theme.colors.gray.color : theme.colors.green.color
+        disabled ? theme.colors.gray.color : theme.colors.primary.color
     }
     
     private var primaryForeground: Color {

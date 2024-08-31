@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct TFAnimatedTitle: View {
+struct CDSAnimatedTitle: View {
     var title: String
     var selected: Bool
     
