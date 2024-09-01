@@ -10,6 +10,7 @@ import SwiftUI
 public protocol CDSText {
     var buttonFont: CDSFont { get }
     var textFieldFont: CDSFont { get }
+    var actionLabelFont: CDSFont { get }
 }
 
 public struct CDSFont {

@@ -8,6 +8,7 @@
 import SwiftUI
 import CDSComponents
 
+
 struct ContentView: View {
     @CDSThemeCore var theme: CDSTheme
     
@@ -16,6 +17,7 @@ struct ContentView: View {
     @State var name: String = ""
     @State var email: String = ""
     @State var password: String = ""
+    @State var cellphone: String = ""
     
     var text: String {
         buttonIconState ? "Habilitar" : "Desabilitar"
@@ -34,9 +36,10 @@ struct ContentView: View {
             VStack(spacing: 33) {
                 CDSTextField("Name", text: $name, type: .capitalized)
                 CDSTextField("Email", text: $email, type: .email, state: .error)
-                CDSTextField("Celular", text: $password, type: .number)
+                CDSTextField("Celular", text: $cellphone, type: .number)
                 CDSTextField("Password", text: $password, type: .password)
             }
+            
             
             Spacer()
             
@@ -47,9 +50,20 @@ struct ContentView: View {
             IconButtonStack(state: buttonIconState,
                             buttonState: $buttonState,
                             size: .small)
+            Spacer()
+            CDSActionLabel(content: [
+                .link(text: "Apple", url: "http://apple.com"),
+                .text(text: " Ainda não tem uma conta? "),
+                .button(text: "Cadastre-se", action: toggleButtons)
+            ])
         }
         .padding(theme.sizes.margin)
         .background(theme.colors.white.color)
+    }
+    
+    private func toggleButtons() {
+        buttonState.toggle()
+        buttonIconState.toggle()
     }
         
 }

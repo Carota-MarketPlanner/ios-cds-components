@@ -67,4 +67,5 @@ public class CDSCarotaText: CDSText {
     
     public var buttonFont = CDSFont(Fonts.poppinsMediun.rawValue, size: 18)
     public var textFieldFont = CDSFont(Fonts.poppinsMediun.rawValue, size: 16)
+    public var actionLabelFont = CDSFont(Fonts.poppinsMediun.rawValue, size: 14)
 }
