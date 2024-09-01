@@ -14,7 +14,7 @@ struct IconButtonStack: View {
     var size: ButtonSize
     
     var iconButonIcon: String {
-        buttonState ? "lightswitch.off" : "lightswitch.on.fill"
+        buttonState ? Constants.ButtonStack.lightSwitchOff : Constants.ButtonStack.lightSwitchOn
     }
     
     @Binding var buttonState: Bool
@@ -27,8 +27,6 @@ struct IconButtonStack: View {
     
     var body: some View {
         HStack {
-            Spacer()
-            
             CDSIconButton(icon: iconButonIcon,
                           style: .primary(type: .default(size: size, disabled: state))) {
                 buttonState.toggle()
