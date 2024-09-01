@@ -13,9 +13,9 @@ public protocol CDSColor {
     var gray: Hex { get }
     var lightGray: Hex { get }
     var white: Hex { get }
-    var green: Hex { get }
-    var yellow: Hex { get }
-    var orange: Hex { get }
+    var primary: Hex { get }
+    var secondary: Hex { get }
+    var error: Hex { get }
 }
 
 public struct Hex {

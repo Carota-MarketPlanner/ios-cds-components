@@ -109,7 +109,7 @@ class CDSIconButtonStyleBuilder {
     }
     
     private func primaryBackground(for disabled: Bool) -> Color {
-        disabled ? theme.colors.lightGray.color : theme.colors.green.color
+        disabled ? theme.colors.lightGray.color : theme.colors.primary.color
     }
     
     // Foreground
@@ -131,7 +131,7 @@ class CDSIconButtonStyleBuilder {
     }
     
     private func strokedPrimaryForeground(for disabled: Bool) -> Color {
-        disabled ? theme.colors.gray.color : theme.colors.green.color
+        disabled ? theme.colors.gray.color : theme.colors.primary.color
     }
     
     private func primaryForeground(for disabled: Bool) -> Color {

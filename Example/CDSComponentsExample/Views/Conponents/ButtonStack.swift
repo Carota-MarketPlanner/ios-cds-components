@@ -15,7 +15,7 @@ struct ButtonStack: View {
     @Binding var iconButtonState: Bool
     
     var buttonIcon: String {
-        iconButtonState ? "lightswitch.off" : "lightswitch.on.fill"
+        iconButtonState ? Constants.ButtonStack.lightSwitchOff : Constants.ButtonStack.lightSwitchOn
     }
     
     init(text: String, state: Bool, iconButtonState: Binding<Bool>) {
@@ -31,7 +31,6 @@ struct ButtonStack: View {
                                       size: .infinity,
                                       disabled: state)) {
                 iconButtonState.toggle()
-                print("Deu certo")
             }
             
             CDSButton(text,
@@ -39,7 +38,6 @@ struct ButtonStack: View {
                                       size: .infinity,
                                       disabled: state)) {
                 iconButtonState.toggle()
-                print("Deu certo")
             }
             
             CDSButton(text,
@@ -47,7 +45,6 @@ struct ButtonStack: View {
                                         size: .infinity,
                                         disabled: state)) {
                 iconButtonState.toggle()
-                print("Deu certo")
             }
         }
     }

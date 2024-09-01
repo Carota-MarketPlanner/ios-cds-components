@@ -22,4 +22,9 @@ public protocol CDSSize {
     var buttonSpacing: CGFloat { get }
     var buttonPadding: CGFloat { get }
     var buttonSmallPadding: CGFloat { get }
+    // TextField
+    var textFieldIconSize: CGFloat { get }
+    var textFieldLineWidth: CGFloat { get }
+    var textFieldHeight: CGFloat { get }
+    var textFieldSpacing: CGFloat { get }
 }
