@@ -8,9 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		D571FF4658CD0BEFBCA28199 /* Pods_CDSComponents_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B53F581598B33319C4F3C7A /* Pods_CDSComponents_Example.framework */; };
-		DE044BF92C7D63D400368B81 /* CarotaTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE044BF82C7D63D400368B81 /* CarotaTheme.swift */; };
-		DE044C072C7E9D7400368B81 /* Poppins-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DE044C052C7E9D7400368B81 /* Poppins-SemiBold.ttf */; };
-		DE044C082C7E9D7400368B81 /* Poppins-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DE044C062C7E9D7400368B81 /* Poppins-Medium.ttf */; };
 		DE044C1D2C7FA75600368B81 /* ButtonStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE044C1C2C7FA75600368B81 /* ButtonStack.swift */; };
 		DE044C1F2C7FAA6500368B81 /* IconButtonStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE044C1E2C7FAA6500368B81 /* IconButtonStack.swift */; };
 		DE044C3A2C8518EC00368B81 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE044C392C8518EC00368B81 /* Constants.swift */; };
@@ -24,9 +21,6 @@
 		1B53F581598B33319C4F3C7A /* Pods_CDSComponents_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CDSComponents_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA6237DB7A6B4B1CDAC61352 /* Pods-CDSComponents_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CDSComponents_Example.debug.xcconfig"; path = "Target Support Files/Pods-CDSComponents_Example/Pods-CDSComponents_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		B4BD8207D38228D9ABBE3F01 /* Pods-CDSComponents_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CDSComponents_Example.release.xcconfig"; path = "Target Support Files/Pods-CDSComponents_Example/Pods-CDSComponents_Example.release.xcconfig"; sourceTree = "<group>"; };
-		DE044BF82C7D63D400368B81 /* CarotaTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarotaTheme.swift; sourceTree = "<group>"; };
-		DE044C052C7E9D7400368B81 /* Poppins-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-SemiBold.ttf"; sourceTree = "<group>"; };
-		DE044C062C7E9D7400368B81 /* Poppins-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Medium.ttf"; sourceTree = "<group>"; };
 		DE044C0B2C7E9F0200368B81 /* CDSComponents-Example-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "CDSComponents-Example-Info.plist"; sourceTree = "<group>"; };
 		DE044C1C2C7FA75600368B81 /* ButtonStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonStack.swift; sourceTree = "<group>"; };
 		DE044C1E2C7FAA6500368B81 /* IconButtonStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconButtonStack.swift; sourceTree = "<group>"; };
@@ -67,24 +61,6 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		DE044BF72C7D63AC00368B81 /* CarotaTheme */ = {
-			isa = PBXGroup;
-			children = (
-				DE044BF82C7D63D400368B81 /* CarotaTheme.swift */,
-				DE044C042C7E9CE300368B81 /* Fonts */,
-			);
-			path = CarotaTheme;
-			sourceTree = "<group>";
-		};
-		DE044C042C7E9CE300368B81 /* Fonts */ = {
-			isa = PBXGroup;
-			children = (
-				DE044C062C7E9D7400368B81 /* Poppins-Medium.ttf */,
-				DE044C052C7E9D7400368B81 /* Poppins-SemiBold.ttf */,
-			);
-			path = Fonts;
-			sourceTree = "<group>";
-		};
 		DE044C192C7FA71500368B81 /* App */ = {
 			isa = PBXGroup;
 			children = (
@@ -96,8 +72,8 @@
 		DE044C1A2C7FA71D00368B81 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				DE044C372C8518A600368B81 /* Conponents */,
 				DE99C1312C570F60006AC24E /* ContentView.swift */,
+				DE044C372C8518A600368B81 /* Conponents */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -150,11 +126,10 @@
 			isa = PBXGroup;
 			children = (
 				DE044C192C7FA71500368B81 /* App */,
+				DE044C382C8518D700368B81 /* Constants */,
+				DE044C1A2C7FA71D00368B81 /* Views */,
 				DE044C1B2C7FA73000368B81 /* Resources */,
 				DE99C1352C570F61006AC24E /* Preview Content */,
-				DE044C382C8518D700368B81 /* Constants */,
-				DE044BF72C7D63AC00368B81 /* CarotaTheme */,
-				DE044C1A2C7FA71D00368B81 /* Views */,
 			);
 			path = CDSComponentsExample;
 			sourceTree = "<group>";
@@ -227,8 +202,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DE044C072C7E9D7400368B81 /* Poppins-SemiBold.ttf in Resources */,
-				DE044C082C7E9D7400368B81 /* Poppins-Medium.ttf in Resources */,
 				DE99C1372C570F61006AC24E /* Preview Assets.xcassets in Resources */,
 				DE99C1342C570F61006AC24E /* Assets.xcassets in Resources */,
 			);
@@ -284,7 +257,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				DE99C1322C570F60006AC24E /* ContentView.swift in Sources */,
-				DE044BF92C7D63D400368B81 /* CarotaTheme.swift in Sources */,
 				DE044C1F2C7FAA6500368B81 /* IconButtonStack.swift in Sources */,
 				DE044C1D2C7FA75600368B81 /* ButtonStack.swift in Sources */,
 				DE99C1302C570F60006AC24E /* CDSComponentsApp.swift in Sources */,

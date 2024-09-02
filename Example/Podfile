@@ -1,8 +1,11 @@
-use_frameworks!
+source 'https://github.com/Carota-MarketPlanner/podspecs.git'
 
 platform :ios, '15.0'
+use_frameworks!
 
 target 'CDSComponents_Example' do
   pod 'CDSComponents/Source', :path => '../'
+  
+  pod 'CarotaTheme/Source', '1.0.0'
 
 end
