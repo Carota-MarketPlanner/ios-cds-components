@@ -11,4 +11,5 @@ public protocol CDSTheme {
     var colors: CDSColor { get }
     var sizes: CDSSize { get }
     var fonts: CDSText { get }
+    var bundle: Bundle { get }
 }

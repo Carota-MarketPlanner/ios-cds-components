@@ -8,8 +8,11 @@
 import SwiftUI
 
 extension Font {
+    
     static func register(font: CDSFont) {
-        if let fontPath = Bundle.main.path(forResource: font.fileName, ofType: font.extension),
+        @CDSThemeCore var theme: CDSTheme
+        
+        if let fontPath = theme.bundle.path(forResource: font.fileName, ofType: font.extension),
            let fontData = NSData(contentsOfFile: fontPath),
            let dataProvider = CGDataProvider(data: fontData),
            let font = CGFont(dataProvider) {
