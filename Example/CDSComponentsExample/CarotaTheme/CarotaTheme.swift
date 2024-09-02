@@ -14,6 +14,7 @@ public class CDSCarotaTheme: CDSTheme {
     public var colors = CDSCarotaColor.shared
     public var sizes = CDSCarotaSize.shared
     public var fonts = CDSCarotaText.shared
+    public var bundle = Bundle(for: CDSCarotaTheme.self)
 }
 
 public class CDSCarotaColor: CDSColor {
