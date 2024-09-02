@@ -8,26 +8,26 @@
 import SwiftUI
 
 class CDSButtonStyleBuilder {
-    // MARK: - Typealiases
     
-    typealias ButtonState = CDSButtonStyle.CDSButtonState
+    @CDSThemeCore var theme: CDSTheme
+    
+    // MARK: - Typealiases
+
     typealias ButtonType = CDSButtonStyle.CDSButtonType
     typealias IconPosition = ButtonType.CDSButtonIconPosition
     typealias ButtonSize = CDSButtonStyle.CDSButtonSize
     
     // MARK: - Public Properties
     
-    let horizontalPadding: CGFloat = 24
-    let verticalPadding: CGFloat  = 20
-    let height: CGFloat  = 58
-    let cornerRadius: CGFloat  = 16
-    let lineWidht: CGFloat = 2
-    let spacing: CGFloat = 20
+    var padding: CGFloat { theme.sizes.buttonPadding }
+    var height: CGFloat  { theme.sizes.buttonSize }
+    var cornerRadius: CGFloat { theme.sizes.buttonCornerRadius }
+    var lineWidht: CGFloat { theme.sizes.buttonLineWidht }
+    var spacing: CGFloat { theme.sizes.buttonSpacing }
+    var font: Font { theme.fonts.buttonFont.font }
     
     // MARK: - Private Properties
     
-    private var secondaryBackground: Color = .clear
-    private var primaryForeground: Color = .white
     private let style: CDSButtonStyle
     
     // MARK: - Initializer
@@ -52,7 +52,10 @@ class CDSButtonStyleBuilder {
     }
     
     public var disabled: Bool {
-        return state == .disabled
+        switch style {
+        case .primary(_, _, let disabled), .secondary(_, _, let disabled):
+            return disabled
+        }
     }
     
     var background: Color {
@@ -70,13 +73,6 @@ class CDSButtonStyleBuilder {
     }
     
     // MARK: - Private View Properties
-    
-    private var state: ButtonState {
-        switch style {
-        case .primary(_, _, let state), .secondary(_, _, let state):
-            return state
-        }
-    }
     
     private var type: ButtonType {
         switch style {
@@ -102,18 +98,18 @@ class CDSButtonStyleBuilder {
     }
     
     private var primaryBackground: Color {
-        switch state {
-        case .enabled: .green
-        case .disabled: Color(uiColor: .lightGray)
-        }
+        disabled ? theme.colors.lightGray.color : theme.colors.primary.color
     }
     
     private var secondaryForeground: Color {
-        switch state {
-        case .enabled: .green
-        case .disabled: Color(uiColor: .lightGray)
-        }
+        disabled ? theme.colors.gray.color : theme.colors.primary.color
     }
+    
+    private var primaryForeground: Color {
+        disabled ? theme.colors.gray.color : theme.colors.white.color
+    }
+    
+    private var secondaryBackground: Color = .clear
     
     // MARK: - View Builders
     
@@ -122,7 +118,7 @@ class CDSButtonStyleBuilder {
         switch style {
         case .secondary:
             RoundedRectangle(cornerRadius: cornerRadius)
-                .stroke(foregroundColor, lineWidth: lineWidht)
+                .stroke(primaryBackground, lineWidth: lineWidht)
         default:
             EmptyView()
         }
@@ -131,6 +127,9 @@ class CDSButtonStyleBuilder {
     @ViewBuilder
     private func iconView(name: String) -> some View {
         Image(systemName: name)
+            .resizable()
+            .aspectRatio(contentMode: .fit)
+            .frame(maxHeight: theme.sizes.buttonIconSize)
     }
     
     @ViewBuilder
