@@ -26,8 +26,8 @@ find "$SEARCH_DIR" -name '*.podspec' | while read -r PODSPEC_FILE; do
         exit 1
     fi
 
-    if [ -n "$VERSION" ]; then
-        echo "Version: $VERSION"
+    if [ -n "$version" ]; then
+        echo "Version: $version"
     else
         echo "Version not found."
         exit 1
@@ -72,8 +72,11 @@ find "$SEARCH_DIR" -name '*.podspec' | while read -r PODSPEC_FILE; do
     rm -rf $iphoneosSimulatorDirectory
 
     #Publish Release
+    git add .
+    git commit -m "build $version"
+
     git tag $version
-    git push --tags origin
+    git push --tags origin develop
     pod repo push carota $moduleName.podspec --allow-warnings
 
 done
