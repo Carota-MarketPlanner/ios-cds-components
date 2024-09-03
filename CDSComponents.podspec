@@ -12,7 +12,10 @@ TODO: Add long description of the pod here.
   s.author           = { 'Elias Ferreira' => 'eliasferreira.pro@gmail.com' }
   s.source           = { :git => 'https://github.com/Carota-MarketPlanner/ios-cds-components.git', :tag => s.version.to_s }
 
+  s.platforms = { :ios => '15.0'}
   s.ios.deployment_target = '15.0'
+  
+  s.pod_target_xcconfig = { "ENABLE_BITECODE" => "NO", "SKIP_INSTALL" => "NO" }
   
   s.default_subspecs = "Binary"
 
