@@ -1,0 +1,11 @@
+framework module CDSComponents {
+  umbrella header "CDSComponents-umbrella.h"
+
+  export *
+  module * { export * }
+}
+
+module CDSComponents.Swift {
+  header "CDSComponents-Swift.h"
+  requires objc
+}
