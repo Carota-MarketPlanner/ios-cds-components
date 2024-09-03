@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import CarotaTheme
 import CDSComponents
 
 @main

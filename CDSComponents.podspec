@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'CDSComponents'
-  s.version          = '1.0.1'
+  s.version          = '1.0.2'
   s.summary          = 'Desgin System Components for Carota App'
 
   s.description      = <<-DESC
@@ -17,7 +17,7 @@ TODO: Add long description of the pod here.
   s.default_subspecs = "Binary"
 
   s.subspec 'Binary' do |release|
-    release.vendored_frameworks = 'CDSComponents.framework'
+    release.vendored_frameworks = 'Release/CDSComponents.xcframework'
   end
 
   s.subspec 'Source' do |debug|

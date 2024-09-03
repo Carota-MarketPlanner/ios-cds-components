@@ -1,0 +1,206 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 5.10 (swiftlang-5.10.0.13 clang-1500.3.9.4)
+// swift-module-flags: -target arm64-apple-ios15.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -enable-bare-slash-regex -module-name CDSComponents
+@_exported import CDSComponents
+import Foundation
+import Swift
+import SwiftUI
+import _Concurrency
+import _StringProcessing
+import _SwiftConcurrencyShims
+public struct CDSActionLabel : SwiftUI.View {
+  public init(content: [CDSComponents.CDSActionLabelStyle])
+  @_Concurrency.MainActor(unsafe) public var body: some SwiftUI.View {
+    get
+  }
+  public typealias Body = @_opaqueReturnTypeOf("$s13CDSComponents14CDSActionLabelV4bodyQrvp", 0) __
+}
+public enum CDSActionLabelStyle {
+  case text(text: Swift.String)
+  case button(text: Swift.String, action: () -> Swift.Void)
+  case link(text: Swift.String, url: Swift.String)
+}
+public struct CDSButton : SwiftUI.View {
+  public init(_ label: Swift.String, style: CDSComponents.CDSButtonStyle, disabled: Swift.Bool = false, action: @escaping () -> Swift.Void)
+  @_Concurrency.MainActor(unsafe) public var body: some SwiftUI.View {
+    get
+  }
+  public typealias Body = @_opaqueReturnTypeOf("$s13CDSComponents9CDSButtonV4bodyQrvp", 0) __
+}
+public enum CDSButtonStyle {
+  case primary(type: CDSComponents.CDSButtonStyle.CDSButtonType = .default, size: CDSComponents.CDSButtonStyle.CDSButtonSize = .normal, disabled: Swift.Bool = false)
+  case secondary(type: CDSComponents.CDSButtonStyle.CDSButtonType = .default, size: CDSComponents.CDSButtonStyle.CDSButtonSize = .normal, disabled: Swift.Bool = false)
+  public enum CDSButtonType {
+    case `default`
+    case iconed(position: CDSComponents.CDSButtonStyle.CDSButtonType.CDSButtonIconPosition)
+    public enum CDSButtonIconPosition {
+      case left(name: Swift.String)
+      case right(name: Swift.String)
+    }
+  }
+  public enum CDSButtonSize {
+    case normal
+    case infinity
+    public static func == (a: CDSComponents.CDSButtonStyle.CDSButtonSize, b: CDSComponents.CDSButtonStyle.CDSButtonSize) -> Swift.Bool
+    public func hash(into hasher: inout Swift.Hasher)
+    public var hashValue: Swift.Int {
+      get
+    }
+  }
+}
+public protocol CDSColor {
+  var black: CDSComponents.Hex { get }
+  var darkGray: CDSComponents.Hex { get }
+  var gray: CDSComponents.Hex { get }
+  var lightGray: CDSComponents.Hex { get }
+  var white: CDSComponents.Hex { get }
+  var primary: CDSComponents.Hex { get }
+  var secondary: CDSComponents.Hex { get }
+  var error: CDSComponents.Hex { get }
+}
+public struct Hex {
+  public var hex: Swift.String
+  public init(_ hex: Swift.String)
+  public var color: SwiftUI.Color {
+    get
+  }
+}
+public struct CDSIconButton : SwiftUI.View {
+  public init(icon: Swift.String, style: CDSComponents.CDSIconButtonStyle, disabled: Swift.Bool = false, action: @escaping () -> Swift.Void)
+  @_Concurrency.MainActor(unsafe) public var body: some SwiftUI.View {
+    get
+  }
+  public typealias Body = @_opaqueReturnTypeOf("$s13CDSComponents13CDSIconButtonV4bodyQrvp", 0) __
+}
+public enum CDSIconButtonStyle {
+  case primary(type: CDSComponents.CDSIconButtonStyle.CDSIconButtonType = .default())
+  case secondary(type: CDSComponents.CDSIconButtonStyle.CDSIconButtonType = .default())
+  public enum CDSIconButtonType {
+    case `default`(size: CDSComponents.CDSIconButtonStyle.CDSIconButtonType.CDSIconButtonSize = .normal, disabled: Swift.Bool = false)
+    case stroked(size: CDSComponents.CDSIconButtonStyle.CDSIconButtonType.CDSIconButtonSize = .normal, disabled: Swift.Bool = false)
+    public enum CDSIconButtonSize {
+      case normal
+      case small
+      public static func == (a: CDSComponents.CDSIconButtonStyle.CDSIconButtonType.CDSIconButtonSize, b: CDSComponents.CDSIconButtonStyle.CDSIconButtonType.CDSIconButtonSize) -> Swift.Bool
+      public func hash(into hasher: inout Swift.Hasher)
+      public var hashValue: Swift.Int {
+        get
+      }
+    }
+  }
+}
+public struct CDSLabel : SwiftUI.View {
+  public init(style: CDSComponents.CDSLabelStyle)
+  @_Concurrency.MainActor(unsafe) public var body: some SwiftUI.View {
+    get
+  }
+  public typealias Body = @_opaqueReturnTypeOf("$s13CDSComponents8CDSLabelV4bodyQrvp", 0) __
+}
+public enum CDSLabelStyle {
+  case primary(_: Swift.String, type: CDSComponents.CDSLabelStyle.CDSLabelType)
+  case secondary(_: Swift.String, type: CDSComponents.CDSLabelStyle.CDSLabelType)
+  case onColor(_: Swift.String, type: CDSComponents.CDSLabelStyle.CDSLabelType)
+  public enum CDSLabelType {
+    case largeTitle
+    case title
+    case subtitle
+    case largeContent
+    case content
+    case smallContent
+    case tag
+    public static func == (a: CDSComponents.CDSLabelStyle.CDSLabelType, b: CDSComponents.CDSLabelStyle.CDSLabelType) -> Swift.Bool
+    public func hash(into hasher: inout Swift.Hasher)
+    public var hashValue: Swift.Int {
+      get
+    }
+  }
+}
+public protocol CDSSize {
+  var margin: CoreFoundation.CGFloat { get }
+  var buttonSize: CoreFoundation.CGFloat { get }
+  var buttonSmallSize: CoreFoundation.CGFloat { get }
+  var buttonIconSize: CoreFoundation.CGFloat { get }
+  var buttonIconSmallSize: CoreFoundation.CGFloat { get }
+  var buttonCornerRadius: CoreFoundation.CGFloat { get }
+  var buttonSmallCornerRadius: CoreFoundation.CGFloat { get }
+  var buttonLineWidht: CoreFoundation.CGFloat { get }
+  var buttonSmallLineWidht: CoreFoundation.CGFloat { get }
+  var buttonSpacing: CoreFoundation.CGFloat { get }
+  var buttonPadding: CoreFoundation.CGFloat { get }
+  var buttonSmallPadding: CoreFoundation.CGFloat { get }
+  var textFieldIconSize: CoreFoundation.CGFloat { get }
+  var textFieldLineWidth: CoreFoundation.CGFloat { get }
+  var textFieldHeight: CoreFoundation.CGFloat { get }
+  var textFieldSpacing: CoreFoundation.CGFloat { get }
+}
+public protocol CDSText {
+  var buttonFont: CDSComponents.CDSFont { get }
+  var textFieldFont: CDSComponents.CDSFont { get }
+  var actionLabelFont: CDSComponents.CDSFont { get }
+  var largeTitle: CDSComponents.CDSFont { get }
+  var title: CDSComponents.CDSFont { get }
+  var subtitle: CDSComponents.CDSFont { get }
+  var largeContent: CDSComponents.CDSFont { get }
+  var content: CDSComponents.CDSFont { get }
+  var smallContent: CDSComponents.CDSFont { get }
+  var tag: CDSComponents.CDSFont { get }
+}
+public struct CDSFont {
+  public init(_ fileName: Swift.String, fontName: Swift.String? = nil, size: CoreFoundation.CGFloat)
+  public var font: SwiftUI.Font {
+    get
+  }
+}
+@_Concurrency.MainActor(unsafe) public struct CDSTextField : SwiftUI.View {
+  @_Concurrency.MainActor(unsafe) public init(_ title: Swift.String, text: SwiftUI.Binding<Swift.String>, type: CDSComponents.CDSTextFieldType = .text, state: CDSComponents.CDSTextFieldState = .default)
+  @_Concurrency.MainActor(unsafe) public var body: some SwiftUI.View {
+    get
+  }
+  public typealias Body = @_opaqueReturnTypeOf("$s13CDSComponents12CDSTextFieldV4bodyQrvp", 0) __
+}
+public enum CDSTextFieldType {
+  case text
+  case capitalized
+  case email
+  case password
+  case number
+  case cellphone
+  case cpf
+  public static func == (a: CDSComponents.CDSTextFieldType, b: CDSComponents.CDSTextFieldType) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+public enum CDSTextFieldState {
+  case `default`
+  case error
+  public static func == (a: CDSComponents.CDSTextFieldState, b: CDSComponents.CDSTextFieldState) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+public protocol CDSTheme {
+  var colors: any CDSComponents.CDSColor { get }
+  var sizes: any CDSComponents.CDSSize { get }
+  var fonts: any CDSComponents.CDSText { get }
+  var bundle: Foundation.Bundle { get }
+}
+@propertyWrapper public struct CDSThemeCore {
+  public var wrappedValue: any CDSComponents.CDSTheme {
+    get
+  }
+  public init()
+  public static func setTheme(theme: any CDSComponents.CDSTheme)
+}
+extension CDSComponents.CDSButtonStyle.CDSButtonSize : Swift.Equatable {}
+extension CDSComponents.CDSButtonStyle.CDSButtonSize : Swift.Hashable {}
+extension CDSComponents.CDSIconButtonStyle.CDSIconButtonType.CDSIconButtonSize : Swift.Equatable {}
+extension CDSComponents.CDSIconButtonStyle.CDSIconButtonType.CDSIconButtonSize : Swift.Hashable {}
+extension CDSComponents.CDSLabelStyle.CDSLabelType : Swift.Equatable {}
+extension CDSComponents.CDSLabelStyle.CDSLabelType : Swift.Hashable {}
+extension CDSComponents.CDSTextFieldType : Swift.Equatable {}
+extension CDSComponents.CDSTextFieldType : Swift.Hashable {}
+extension CDSComponents.CDSTextFieldState : Swift.Equatable {}
+extension CDSComponents.CDSTextFieldState : Swift.Hashable {}
