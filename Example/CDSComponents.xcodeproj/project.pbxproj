@@ -11,6 +11,9 @@
 		DE044C1D2C7FA75600368B81 /* ButtonStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE044C1C2C7FA75600368B81 /* ButtonStack.swift */; };
 		DE044C1F2C7FAA6500368B81 /* IconButtonStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE044C1E2C7FAA6500368B81 /* IconButtonStack.swift */; };
 		DE044C3A2C8518EC00368B81 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE044C392C8518EC00368B81 /* Constants.swift */; };
+		DE6B75262D7E46C600CAD00C /* CarotaExampleTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE6B75252D7E46B900CAD00C /* CarotaExampleTheme.swift */; };
+		DE6B75292D7E48BA00CAD00C /* Poppins-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DE6B75282D7E48BA00CAD00C /* Poppins-Medium.ttf */; };
+		DE6B752B2D7E48C000CAD00C /* Poppins-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DE6B752A2D7E48C000CAD00C /* Poppins-SemiBold.ttf */; };
 		DE99C1302C570F60006AC24E /* CDSComponentsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE99C12F2C570F60006AC24E /* CDSComponentsApp.swift */; };
 		DE99C1322C570F60006AC24E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE99C1312C570F60006AC24E /* ContentView.swift */; };
 		DE99C1342C570F61006AC24E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DE99C1332C570F61006AC24E /* Assets.xcassets */; };
@@ -25,6 +28,9 @@
 		DE044C1C2C7FA75600368B81 /* ButtonStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonStack.swift; sourceTree = "<group>"; };
 		DE044C1E2C7FAA6500368B81 /* IconButtonStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconButtonStack.swift; sourceTree = "<group>"; };
 		DE044C392C8518EC00368B81 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		DE6B75252D7E46B900CAD00C /* CarotaExampleTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarotaExampleTheme.swift; sourceTree = "<group>"; };
+		DE6B75282D7E48BA00CAD00C /* Poppins-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Medium.ttf"; sourceTree = "<group>"; };
+		DE6B752A2D7E48C000CAD00C /* Poppins-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-SemiBold.ttf"; sourceTree = "<group>"; };
 		DE99C12C2C570F60006AC24E /* CDSComponents_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CDSComponents_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE99C12F2C570F60006AC24E /* CDSComponentsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDSComponentsApp.swift; sourceTree = "<group>"; };
 		DE99C1312C570F60006AC24E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -103,6 +109,23 @@
 			path = Constants;
 			sourceTree = "<group>";
 		};
+		DE6B75242D7E46AC00CAD00C /* ExampleTheme */ = {
+			isa = PBXGroup;
+			children = (
+				DE6B75252D7E46B900CAD00C /* CarotaExampleTheme.swift */,
+			);
+			path = ExampleTheme;
+			sourceTree = "<group>";
+		};
+		DE6B75272D7E48AE00CAD00C /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				DE6B752A2D7E48C000CAD00C /* Poppins-SemiBold.ttf */,
+				DE6B75282D7E48BA00CAD00C /* Poppins-Medium.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
 		DE99C1232C570F60006AC24E = {
 			isa = PBXGroup;
 			children = (
@@ -125,6 +148,8 @@
 		DE99C12E2C570F60006AC24E /* CDSComponentsExample */ = {
 			isa = PBXGroup;
 			children = (
+				DE6B75272D7E48AE00CAD00C /* Fonts */,
+				DE6B75242D7E46AC00CAD00C /* ExampleTheme */,
 				DE044C192C7FA71500368B81 /* App */,
 				DE044C382C8518D700368B81 /* Constants */,
 				DE044C1A2C7FA71D00368B81 /* Views */,
@@ -202,6 +227,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DE6B75292D7E48BA00CAD00C /* Poppins-Medium.ttf in Resources */,
+				DE6B752B2D7E48C000CAD00C /* Poppins-SemiBold.ttf in Resources */,
 				DE99C1372C570F61006AC24E /* Preview Assets.xcassets in Resources */,
 				DE99C1342C570F61006AC24E /* Assets.xcassets in Resources */,
 			);
@@ -260,6 +287,7 @@
 				DE044C1F2C7FAA6500368B81 /* IconButtonStack.swift in Sources */,
 				DE044C1D2C7FA75600368B81 /* ButtonStack.swift in Sources */,
 				DE99C1302C570F60006AC24E /* CDSComponentsApp.swift in Sources */,
+				DE6B75262D7E46C600CAD00C /* CarotaExampleTheme.swift in Sources */,
 				DE044C3A2C8518EC00368B81 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
