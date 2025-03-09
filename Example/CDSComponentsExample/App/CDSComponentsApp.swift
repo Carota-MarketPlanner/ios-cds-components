@@ -6,14 +6,13 @@
 //
 
 import SwiftUI
-import CarotaTheme
 import CDSComponents
 
 @main
 struct CDSComponentsApp: App {
     
     init() {
-        CDSThemeCore.setTheme(theme: CDSCarotaTheme())
+        CDSThemeCore.setTheme(theme: CarotaExampleTheme())
     }
     
     var body: some Scene {
