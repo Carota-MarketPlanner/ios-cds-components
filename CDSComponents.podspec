@@ -15,12 +15,10 @@ TODO: Add long description of the pod here.
   s.platforms = { :ios => '15.0'}
   s.ios.deployment_target = '15.0'
   
-  s.pod_target_xcconfig = { "ENABLE_BITECODE" => "NO", "SKIP_INSTALL" => "NO" }
-  
   s.default_subspecs = "Binary"
 
   s.subspec 'Binary' do |release|
-    release.vendored_frameworks = 'Release/CDSComponents.xcframework'
+    release.vendored_frameworks = 'CDSComponents.xcframework'
   end
 
   s.subspec 'Source' do |debug|
