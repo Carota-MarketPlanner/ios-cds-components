@@ -16,6 +16,7 @@ class CDSButtonStyleBuilder {
     typealias ButtonType = CDSButtonStyle.CDSButtonType
     typealias IconPosition = ButtonType.CDSButtonIconPosition
     typealias ButtonSize = CDSButtonStyle.CDSButtonSize
+    typealias ButtonState = CDSButtonStyle.CDSButtonState
     
     // MARK: - Public Properties
     
@@ -51,11 +52,15 @@ class CDSButtonStyleBuilder {
         return iconPosition != nil ? sizeValue : nil
     }
     
-    public var disabled: Bool {
+    public var state: ButtonState {
         switch style {
-        case .primary(_, _, let disabled), .secondary(_, _, let disabled):
-            return disabled
+        case .primary(_, _, let state), .secondary(_, _, let state):
+            return state
         }
+    }
+    
+    public var isEnabled: Bool {
+        state == .enabled
     }
     
     var background: Color {
@@ -97,16 +102,25 @@ class CDSButtonStyleBuilder {
         }
     }
     
+    private var loadingStyle: CDSLoadingCircleStyle {
+        switch style {
+        case .primary(_, _, _):
+            return .onBrand(size: .small)
+        case .secondary(_, _, _):
+            return .default(size: .small)
+        }
+    }
+    
     private var primaryBackground: Color {
-        disabled ? theme.colors.lightGray.color : theme.colors.primary.color
+        state == .disabled ? theme.colors.lightGray.color : theme.colors.primary.color
     }
     
     private var secondaryForeground: Color {
-        disabled ? theme.colors.gray.color : theme.colors.primary.color
+        state == .disabled  ? theme.colors.gray.color : theme.colors.primary.color
     }
     
     private var primaryForeground: Color {
-        disabled ? theme.colors.gray.color : theme.colors.white.color
+        state == .disabled  ? theme.colors.gray.color : theme.colors.white.color
     }
     
     private var secondaryBackground: Color = .clear
@@ -145,11 +159,21 @@ class CDSButtonStyleBuilder {
     }
     
     @ViewBuilder
-    public func getViewContent(@ViewBuilder content: () -> some View) -> some View {
+    private func getViewWithContent(@ViewBuilder content: () -> some View) -> some View {
         if let iconPosition {
             viewWithIcon(position: iconPosition, content: content)
         } else {
             content()
+        }
+    }
+    
+    @ViewBuilder
+    public func getViewContent(@ViewBuilder content: () -> some View) -> some View {
+        switch state {
+        case .loading:
+            CDSLoadingCircle(style: loadingStyle)
+        default:
+            getViewWithContent(content: content)
         }
     }
 }
