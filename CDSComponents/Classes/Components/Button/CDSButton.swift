@@ -15,7 +15,6 @@ public struct CDSButton: View {
     public init(
         _ label: String,
         style: CDSButtonStyle,
-        disabled: Bool = false,
         action: @escaping () -> Void
     ) {
         self.label = label
