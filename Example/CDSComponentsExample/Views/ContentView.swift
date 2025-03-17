@@ -74,7 +74,7 @@ struct ContentView: View {
     }
     
     private func toggleButtons() {
-        buttonState = .loading
+        buttonState = buttonState == .enabled ? .loading : .enabled
         buttonIconState.toggle()
     }
         
