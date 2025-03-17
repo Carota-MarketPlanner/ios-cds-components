@@ -10,11 +10,11 @@ import Foundation
 public enum CDSButtonStyle {
     case primary(type: CDSButtonType = .default,
                  size: CDSButtonSize = .normal,
-                 disabled: Bool = false)
+                 state: CDSButtonState = .enabled)
     
     case secondary(type: CDSButtonType = .default,
                    size: CDSButtonSize = .normal,
-                   disabled: Bool = false)
+                   state: CDSButtonState = .enabled)
     
     public enum CDSButtonType {
         case `default`
@@ -29,5 +29,11 @@ public enum CDSButtonStyle {
     public enum CDSButtonSize {
         case normal
         case infinity
+    }
+    
+    public enum CDSButtonState {
+        case enabled
+        case disabled
+        case loading
     }
 }

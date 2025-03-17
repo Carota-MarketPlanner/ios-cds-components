@@ -11,7 +11,7 @@ import CDSComponents
 struct ContentView: View {
     @CDSThemeCore var theme: CDSTheme
     
-    @State var buttonState: Bool = false
+    @State var buttonState: CDSButtonStyle.CDSButtonState = .enabled
     @State var buttonIconState: Bool = false
     @State var name: String = Constants.empty
     @State var email: String = Constants.empty
@@ -74,7 +74,7 @@ struct ContentView: View {
     }
     
     private func toggleButtons() {
-        buttonState.toggle()
+        buttonState = buttonState == .enabled ? .loading : .enabled
         buttonIconState.toggle()
     }
         

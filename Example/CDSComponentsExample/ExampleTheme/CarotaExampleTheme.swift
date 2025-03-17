@@ -56,6 +56,16 @@ public class CarotaExampleSize: CDSSize {
     public var textFieldLineWidth: CGFloat = 1
     public var textFieldHeight: CGFloat = 29
     public var textFieldSpacing: CGFloat = 10
+    // LoadingCircle
+    public var loadingCircleTinnySize: CGFloat = 16
+    public var loadingCircleSmallSize: CGFloat = 24
+    public var loadingCircleMediumSize: CGFloat = 32
+    public var loadingCircleLargeSize: CGFloat = 48
+    public var loadingCircleXlargeSize: CGFloat = 64
+    public var loadingCircleTinnyLineWidth: CGFloat = 2
+    public var loadingCircleSmallMediumLineWidth: CGFloat = 3
+    public var loadingCircleLargeLineWidth: CGFloat = 4
+    public var loadingCircleXlargeLineWidth: CGFloat = 5
 }
 
 public class CarotaExampleText: CDSText {
