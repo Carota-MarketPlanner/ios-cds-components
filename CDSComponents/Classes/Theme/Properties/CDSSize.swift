@@ -27,4 +27,14 @@ public protocol CDSSize {
     var textFieldLineWidth: CGFloat { get }
     var textFieldHeight: CGFloat { get }
     var textFieldSpacing: CGFloat { get }
+    // LoadingCircle
+    var loadingCircleTinnySize: CGFloat { get }
+    var loadingCircleSmallSize: CGFloat { get }
+    var loadingCircleMediumSize: CGFloat { get }
+    var loadingCircleLargeSize: CGFloat { get }
+    var loadingCircleXlargeSize: CGFloat { get }
+    var loadingCircleTinnyLineWidth: CGFloat { get }
+    var loadingCircleSmallMediumLineWidth: CGFloat { get }
+    var loadingCircleLargeLineWidth: CGFloat { get }
+    var loadingCircleXlargeLineWidth: CGFloat { get }
 }

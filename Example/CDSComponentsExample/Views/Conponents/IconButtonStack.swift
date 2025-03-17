@@ -14,12 +14,12 @@ struct IconButtonStack: View {
     var size: ButtonSize
     
     var iconButonIcon: String {
-        buttonState ? Constants.ButtonStack.lightSwitchOff : Constants.ButtonStack.lightSwitchOn
+        buttonState == .enabled ? Constants.ButtonStack.lightSwitchOff : Constants.ButtonStack.lightSwitchOn
     }
     
-    @Binding var buttonState: Bool
+    @Binding var buttonState: CDSButtonStyle.CDSButtonState
     
-    init(state: Bool, buttonState: Binding<Bool>, size: ButtonSize) {
+    init(state: Bool, buttonState: Binding<CDSButtonStyle.CDSButtonState>, size: ButtonSize) {
         self.state = state
         _buttonState = buttonState
         self.size = size
@@ -29,23 +29,27 @@ struct IconButtonStack: View {
         HStack {
             CDSIconButton(icon: iconButonIcon,
                           style: .primary(type: .default(size: size, disabled: state))) {
-                buttonState.toggle()
+                toggleButtonState()
             }
             
             CDSIconButton(icon: iconButonIcon,
                           style: .secondary(type: .default(size: size, disabled: state))) {
-                buttonState.toggle()
+                toggleButtonState()
             }
             
             CDSIconButton(icon: iconButonIcon,
                           style: .primary(type: .stroked(size: size, disabled: state))) {
-                buttonState.toggle()
+                toggleButtonState()
             }
             
             CDSIconButton(icon: iconButonIcon,
                           style: .secondary(type: .stroked(size: size, disabled: state))) {
-                buttonState.toggle()
+                toggleButtonState()
             }
         }
+    }
+    
+    private func toggleButtonState() {
+        buttonState = buttonState == .enabled ? .loading : .enabled
     }
 }

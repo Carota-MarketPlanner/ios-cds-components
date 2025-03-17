@@ -10,7 +10,7 @@ import CDSComponents
 
 struct ButtonStack: View {
     var text: String
-    var state: Bool
+    var state: CDSButtonStyle.CDSButtonState
     
     @Binding var iconButtonState: Bool
     
@@ -18,7 +18,7 @@ struct ButtonStack: View {
         iconButtonState ? Constants.ButtonStack.lightSwitchOff : Constants.ButtonStack.lightSwitchOn
     }
     
-    init(text: String, state: Bool, iconButtonState: Binding<Bool>) {
+    init(text: String, state: CDSButtonStyle.CDSButtonState, iconButtonState: Binding<Bool>) {
         self.text = text
         self.state = state
         _iconButtonState = iconButtonState
@@ -29,21 +29,21 @@ struct ButtonStack: View {
             CDSButton(text,
                       style: .primary(type: .iconed(position: .right(name: buttonIcon)),
                                       size: .infinity,
-                                      disabled: state)) {
+                                      state: state)) {
                 iconButtonState.toggle()
             }
             
             CDSButton(text,
                       style: .primary(type: .iconed(position: .left(name: buttonIcon)),
                                       size: .infinity,
-                                      disabled: state)) {
+                                      state: state)) {
                 iconButtonState.toggle()
             }
             
             CDSButton(text,
                       style: .secondary(type: .default,
                                         size: .infinity,
-                                        disabled: state)) {
+                                        state: state)) {
                 iconButtonState.toggle()
             }
         }
