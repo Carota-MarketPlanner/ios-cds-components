@@ -1,0 +1,42 @@
+name: Update Production Podspecs
+
+on:
+  workflow_call:
+    inputs:
+        name:
+          required: true
+          type: string
+        version:
+          required: true
+          type: string
+
+jobs:
+  update-podspec:
+    name: Upload Production Podspecs
+    runs-on: macos-latest
+    steps:
+      - name: Checkout Module Repository
+        uses: actions/checkout@v3
+
+      - name: Checkout Specs Repository
+        uses: actions/checkout@v3
+        with:
+          repository: "Carota-MarketPlanner/Specs"
+          token: ${{ secrets.PAT_GITHUB }}
+          path: specs_repo
+
+      - name: Update Specs Repository with new Podspec
+        run: |
+          NAME=${{ inputs.name }}
+          VERSION=${{ inputs.version }}
+          mkdir -p specs_repo/${NAME}/${VERSION}
+          cp ${NAME}.podspec specs_repo/${NAME}/${VERSION}/${NAME}.podspec
+
+      - name: Commit and Push on Specs Repository
+        run: |
+          cd specs_repo
+          git config --global user.email "github-actions@github.com"
+          git config --global user.name "github-actions"
+          git add ${{ inputs.name }}/${{ inputs.version }}/${{ inputs.name }}.podspec
+          git commit -m "Atualizando o ${{ inputs.name }} para a versão ${{ inputs.version }}"
+          git push
