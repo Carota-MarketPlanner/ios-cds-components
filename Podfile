@@ -1,8 +1,8 @@
 platform :ios, '15.0'
 use_frameworks!
 
-target 'CDSComponents_Example' do
-  pod 'CDSComponents/Source', :path => '../'
+target 'CDSComponentsExample' do
+  # pod 'CDSComponents/Source', :path => './'
 
 end
 

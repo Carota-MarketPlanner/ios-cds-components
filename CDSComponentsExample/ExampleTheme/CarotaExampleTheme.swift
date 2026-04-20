@@ -5,6 +5,7 @@
 //  Created by Elias Ferreira on 09/03/25.
 //
 
+import Foundation
 import CDSComponents
 
 public class CarotaExampleTheme: CDSTheme {

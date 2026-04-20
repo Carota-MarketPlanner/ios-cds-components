@@ -16,8 +16,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "DE99C12B2C570F60006AC24E"
-               BuildableName = "CDSComponents_Example.app"
-               BlueprintName = "CDSComponents_Example"
+               BuildableName = "CDSComponentsExample.app"
+               BlueprintName = "CDSComponentsExample"
                ReferencedContainer = "container:CDSComponents.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -45,8 +45,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "DE99C12B2C570F60006AC24E"
-            BuildableName = "CDSComponents_Example.app"
-            BlueprintName = "CDSComponents_Example"
+            BuildableName = "CDSComponentsExample.app"
+            BlueprintName = "CDSComponentsExample"
             ReferencedContainer = "container:CDSComponents.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
@@ -62,8 +62,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "DE99C12B2C570F60006AC24E"
-            BuildableName = "CDSComponents_Example.app"
-            BlueprintName = "CDSComponents_Example"
+            BuildableName = "CDSComponentsExample.app"
+            BlueprintName = "CDSComponentsExample"
             ReferencedContainer = "container:CDSComponents.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
