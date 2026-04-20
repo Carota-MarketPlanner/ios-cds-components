@@ -5,6 +5,7 @@
 //  Created by Elias Ferreira on 30/08/24.
 //
 
+import Combine
 import SwiftUI
 
 class CDSTextFieldStyleBuilder: ObservableObject {

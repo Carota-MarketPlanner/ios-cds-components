@@ -1,0 +1,45 @@
+name: Publish Developer on GitHub
+
+on:
+  workflow_call:
+    inputs:
+      name:
+        required: true
+        type: string
+      version:
+        required: true
+        type: string
+
+    outputs:
+      name:
+        description: "Pod Name"
+        value: ${{ inputs.name }}
+      version: 
+        description: "Pod Version"
+        value: ${{ inputs.version }}
+      
+jobs:
+  publish:
+    name: Publish GitHub Release Developer
+    runs-on: macos-latest
+
+    steps:
+      - name: Code Checkout
+        uses: actions/checkout@v4
+
+      - name: Config Git
+        run: |
+          git config user.name "github-actions"
+          git config user.email "github-actions@github.com"
+
+      - name: Criating GitHub Developer Release
+        uses: softprops/action-gh-release@v1
+        with:
+          tag_name: ${{ inputs.version }}
+          name: Release ${{ inputs.version }}
+          body: |
+            Release automática da versão ${{ inputs.version }} for developer
+          draft: false
+          prerelease: true
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
