@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct CDSLoadingCircle: View {
-    @CDSThemeCore var theme: CDSTheme
     
     private let styleBuilder: CDSLoadingCircleStyleBuilder
     

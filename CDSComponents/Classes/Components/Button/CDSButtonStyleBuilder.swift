@@ -8,9 +8,6 @@
 import SwiftUI
 
 class CDSButtonStyleBuilder {
-    
-    @CDSThemeCore var theme: CDSTheme
-    
     // MARK: - Typealiases
 
     typealias ButtonType = CDSButtonStyle.CDSButtonType
@@ -20,12 +17,12 @@ class CDSButtonStyleBuilder {
     
     // MARK: - Public Properties
     
-    var padding: CGFloat { theme.sizes.buttonPadding }
-    var height: CGFloat  { theme.sizes.buttonSize }
-    var cornerRadius: CGFloat { theme.sizes.buttonCornerRadius }
-    var lineWidht: CGFloat { theme.sizes.buttonLineWidht }
-    var spacing: CGFloat { theme.sizes.buttonSpacing }
-    var font: Font { theme.fonts.buttonFont.font }
+    var padding: CGFloat { CDSSize.buttonPadding.size }
+    var height: CGFloat  { CDSSize.buttonSize.size }
+    var cornerRadius: CGFloat { CDSSize.buttonCornerRadius.size }
+    var lineWidht: CGFloat { CDSSize.buttonLineWidht.size }
+    var spacing: CGFloat { CDSSize.buttonSpacing.size }
+    var font: Font { CDSText.buttonFont.font }
     
     // MARK: - Private Properties
     
@@ -112,15 +109,15 @@ class CDSButtonStyleBuilder {
     }
     
     private var primaryBackground: Color {
-        state == .disabled ? theme.colors.lightGray.color : theme.colors.primary.color
+        state == .disabled ? CDSColor.lightGray.color : CDSColor.primary.color
     }
     
     private var secondaryForeground: Color {
-        state == .disabled  ? theme.colors.gray.color : theme.colors.primary.color
+        state == .disabled  ? CDSColor.gray.color : CDSColor.primary.color
     }
     
     private var primaryForeground: Color {
-        state == .disabled  ? theme.colors.gray.color : theme.colors.white.color
+        state == .disabled  ? CDSColor.gray.color : CDSColor.white.color
     }
     
     private var secondaryBackground: Color = .clear
@@ -143,7 +140,7 @@ class CDSButtonStyleBuilder {
         Image(systemName: name)
             .resizable()
             .aspectRatio(contentMode: .fit)
-            .frame(maxHeight: theme.sizes.buttonIconSize)
+            .frame(maxHeight: CDSSize.buttonIconSize.size)
     }
     
     @ViewBuilder
