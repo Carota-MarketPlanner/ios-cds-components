@@ -9,8 +9,6 @@ import SwiftUI
 import CDSComponents
 
 struct ContentView: View {
-    @CDSThemeCore var theme: CDSTheme
-    
     @State var buttonState: CDSButtonStyle.CDSButtonState = .enabled
     @State var buttonIconState: Bool = false
     @State var name: String = Constants.empty
@@ -68,8 +66,8 @@ struct ContentView: View {
                     .button(text: Constants.sighUp, action: toggleButtons)
                 ])
             }
-            .padding(theme.sizes.margin)
-            .background(theme.colors.white.color)
+            .padding(CDSSize.margin.size)
+            .background(CDSColor.white.color)
         }
     }
     

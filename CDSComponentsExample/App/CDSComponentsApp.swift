@@ -12,7 +12,7 @@ import CDSComponents
 struct CDSComponentsApp: App {
     
     init() {
-        CDSThemeCore.setTheme(theme: CarotaExampleTheme())
+        CDSThemeConfig.shared.setTheme(theme: CarotaExampleTheme())
     }
     
     var body: some Scene {

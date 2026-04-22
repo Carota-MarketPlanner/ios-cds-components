@@ -7,34 +7,44 @@
 
 import SwiftUI
 
-public protocol CDSSize {
+public enum CDSSize: String {
     // Global
-    var margin: CGFloat { get }
+    case margin
     // Button
-    var buttonSize: CGFloat { get }
-    var buttonSmallSize: CGFloat { get }
-    var buttonIconSize: CGFloat { get }
-    var buttonIconSmallSize : CGFloat { get }
-    var buttonCornerRadius: CGFloat { get }
-    var buttonSmallCornerRadius: CGFloat { get }
-    var buttonLineWidht: CGFloat { get }
-    var buttonSmallLineWidht: CGFloat { get }
-    var buttonSpacing: CGFloat { get }
-    var buttonPadding: CGFloat { get }
-    var buttonSmallPadding: CGFloat { get }
+    case buttonSize
+    case buttonSmallSize
+    case buttonIconSize
+    case buttonIconSmallSize
+    case buttonCornerRadius
+    case buttonSmallCornerRadius
+    case buttonLineWidht
+    case buttonSmallLineWidht
+    case buttonSpacing
+    case buttonPadding
+    case buttonSmallPadding
     // TextField
-    var textFieldIconSize: CGFloat { get }
-    var textFieldLineWidth: CGFloat { get }
-    var textFieldHeight: CGFloat { get }
-    var textFieldSpacing: CGFloat { get }
+    case textFieldIconSize
+    case textFieldLineWidth
+    case textFieldHeight
+    case textFieldSpacing
     // LoadingCircle
-    var loadingCircleTinnySize: CGFloat { get }
-    var loadingCircleSmallSize: CGFloat { get }
-    var loadingCircleMediumSize: CGFloat { get }
-    var loadingCircleLargeSize: CGFloat { get }
-    var loadingCircleXlargeSize: CGFloat { get }
-    var loadingCircleTinnyLineWidth: CGFloat { get }
-    var loadingCircleSmallMediumLineWidth: CGFloat { get }
-    var loadingCircleLargeLineWidth: CGFloat { get }
-    var loadingCircleXlargeLineWidth: CGFloat { get }
+    case loadingCircleTinnySize
+    case loadingCircleSmallSize
+    case loadingCircleMediumSize
+    case loadingCircleLargeSize
+    case loadingCircleXlargeSize
+    case loadingCircleTinnyLineWidth
+    case loadingCircleSmallMediumLineWidth
+    case loadingCircleLargeLineWidth
+    case loadingCircleXlargeLineWidth
+}
+
+extension CDSSize: CDSPropertie {
+    public var properties: [String : Any] {
+        CDSThemeConfig.shared.theme.sizes
+    }
+    
+    public var size: CGFloat {
+        CGFloat(getPropertie(field: self.rawValue, ofType: Float.self))
+    }
 }

@@ -7,45 +7,29 @@
 
 import SwiftUI
 
-public protocol CDSText {
+public enum CDSText: String {
     // Component
-    var buttonFont: CDSFont { get }
-    var textFieldFont: CDSFont { get }
-    var actionLabelFont: CDSFont { get }
+    case buttonFont
+    case textFieldFont
+    case actionLabelFont
     // Title
-    var largeTitle: CDSFont { get }
-    var title: CDSFont { get }
-    var subtitle: CDSFont { get }
+    case largeTitle
+    case title
+    case subtitle
     // Content
-    var largeContent: CDSFont { get }
-    var content: CDSFont { get }
-    var smallContent: CDSFont { get }
+    case largeContent
+    case content
+    case smallContent
     // Tag
-    var tag: CDSFont { get }
+    case tag
 }
 
-public struct CDSFont {
-    private var fileWihtExt: String
-    var name: String
-    var size: CGFloat
-    
-    public init(_ fileName: String, fontName: String? = nil, size: CGFloat) {
-        self.fileWihtExt = fileName
-        self.size = size
-        self.name = fontName ?? NSString(string: fileName).deletingPathExtension
-    }
-    
-    var fileName: String {
-        NSString(string: self.fileWihtExt).deletingPathExtension
-    }
-    
-    var `extension`: String {
-        NSString(string: self.fileWihtExt).pathExtension
+extension CDSText: CDSPropertie {
+    public var properties: [String : Any] {
+        CDSThemeConfig.shared.theme.fonts
     }
     
     public var font: Font {
-        .custom(cdsFont: self)
+        getPropertie(field: self.rawValue, ofType: CDSFont.self).font
     }
 }
-
-

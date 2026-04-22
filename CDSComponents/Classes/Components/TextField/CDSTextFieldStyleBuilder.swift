@@ -9,10 +9,6 @@ import Combine
 import SwiftUI
 
 class CDSTextFieldStyleBuilder: ObservableObject {
-    @CDSThemeCore var theme: CDSTheme
-    
-    // MARK: - Typealiases
-    
     // MARK: - Private Properties
     
     @Published var secureRevealed: Bool = false
@@ -29,19 +25,19 @@ class CDSTextFieldStyleBuilder: ObservableObject {
     
     // MARK: - Public View Properties
     
-    var textFieldFont: Font { theme.fonts.textFieldFont.font }
+    var textFieldFont: Font { CDSText.textFieldFont.font }
     
     var image: String { secureRevealed ? "eye" : "eye.slash.fill" }
     
-    var titleForeground: Color { theme.colors.darkGray.color }
+    var titleForeground: Color { CDSColor.darkGray.color }
     
-    var textForeground: Color { theme.colors.black.color }
+    var textForeground: Color { CDSColor.black.color }
     
-    var lineWidth: CGFloat { theme.sizes.textFieldLineWidth }
+    var lineWidth: CGFloat { CDSSize.textFieldLineWidth.size }
     
-    var height: CGFloat { theme.sizes.textFieldHeight }
+    var height: CGFloat { CDSSize.textFieldHeight.size }
     
-    var spacing: CGFloat { theme.sizes.textFieldSpacing }
+    var spacing: CGFloat { CDSSize.textFieldSpacing.size }
     
     // MARK: - Private View Properties
     
@@ -82,7 +78,7 @@ class CDSTextFieldStyleBuilder: ObservableObject {
     
     func borderColor(for isFocused: Bool) -> Color {
         switch state {
-        case .error: theme.colors.error.color
+        case .error: CDSColor.error.color
         case .default: borderDefaultColor(for: isFocused)
         }
     }
@@ -90,7 +86,7 @@ class CDSTextFieldStyleBuilder: ObservableObject {
     // MARK: - Private View Functions
     
     private func borderDefaultColor(for isFocused: Bool) -> Color {
-        isFocused ? theme.colors.primary.color : theme.colors.darkGray.color
+        isFocused ? CDSColor.primary.color : CDSColor.darkGray.color
     }
     
     // MARK: - View Builders
@@ -102,10 +98,10 @@ class CDSTextFieldStyleBuilder: ObservableObject {
                 self.secureRevealed.toggle()
             }, label: {
                 Image(systemName: image)
-                    .foregroundColor(theme.colors.darkGray.color)
+                    .foregroundColor(CDSColor.darkGray.color)
             })
-            .frame(maxWidth: theme.sizes.textFieldIconSize,
-                   maxHeight: theme.sizes.textFieldIconSize)
+            .frame(maxWidth: CDSSize.textFieldIconSize.size,
+                   maxHeight: CDSSize.textFieldIconSize.size)
         }
     }
     

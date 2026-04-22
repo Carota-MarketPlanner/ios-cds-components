@@ -7,27 +7,14 @@
 
 import SwiftUI
 
-@propertyWrapper
-public struct CDSThemeCore {
-    private static var theme: CDSTheme?
+public class CDSThemeConfig {
+    public static var shared = CDSThemeConfig()
     
-    public var wrappedValue: CDSTheme {
-        return getTheme()
-    }
+    var theme: CDSTheme = DefaultTheme()
     
-    public init() {}
+    private init() {}
     
-    public static func setTheme(theme: CDSTheme) {
-        if self.theme == nil {
-            self.theme = theme
-        }
-    }
-    
-    private func getTheme() -> CDSTheme {
-        guard let theme = CDSThemeCore.theme else {
-            fatalError("Theme not found")
-        }
-        
-        return theme
+    public func setTheme(theme: CDSTheme) {
+        self.theme = theme
     }
 }
