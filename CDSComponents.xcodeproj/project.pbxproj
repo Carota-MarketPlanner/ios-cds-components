@@ -211,6 +211,7 @@
 		DE6B75242D7E46AC00CAD00C /* ExampleTheme */ = {
 			isa = PBXGroup;
 			children = (
+				DE6B75272D7E48AE00CAD00C /* Fonts */,
 				DE6B75252D7E46B900CAD00C /* CarotaExampleTheme.swift */,
 			);
 			path = ExampleTheme;
@@ -249,7 +250,6 @@
 		DE99C12E2C570F60006AC24E /* CDSComponentsExample */ = {
 			isa = PBXGroup;
 			children = (
-				DE6B75272D7E48AE00CAD00C /* Fonts */,
 				DE6B75242D7E46AC00CAD00C /* ExampleTheme */,
 				DE044C192C7FA71500368B81 /* App */,
 				DE044C382C8518D700368B81 /* Constants */,
