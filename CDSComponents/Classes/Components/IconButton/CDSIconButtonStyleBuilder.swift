@@ -8,9 +8,6 @@
 import SwiftUI
 
 class CDSIconButtonStyleBuilder {
-    
-    @CDSThemeCore var theme: CDSTheme
-    
     // MARK: - Typealiases
     
     typealias ButtonType = CDSIconButtonStyle.CDSIconButtonType
@@ -29,23 +26,23 @@ class CDSIconButtonStyleBuilder {
     // MARK: - Public View Properties
     
     var buttonSize: CGFloat {
-        size == .normal ? theme.sizes.buttonSize : theme.sizes.buttonSmallSize
+        size == .normal ? CDSSize.buttonSize.size : CDSSize.buttonSmallSize.size
     }
     
     var buttonIconSize: CGFloat {
-        size == .normal ? theme.sizes.buttonIconSize : theme.sizes.buttonIconSmallSize
+        size == .normal ? CDSSize.buttonIconSize.size : CDSSize.buttonIconSmallSize.size
     }
     
     var buttonPadding: CGFloat {
-        size == .normal ? theme.sizes.buttonPadding : theme.sizes.buttonSmallPadding
+        size == .normal ? CDSSize.buttonPadding.size : CDSSize.buttonSmallPadding.size
     }
     
     var lineWidht: CGFloat {
-        size == .normal ? theme.sizes.buttonLineWidht : theme.sizes.buttonSmallLineWidht
+        size == .normal ? CDSSize.buttonLineWidht.size : CDSSize.buttonSmallLineWidht.size
     }
     
     var cornerRadius: CGFloat {
-        size == .normal ? theme.sizes.buttonCornerRadius : theme.sizes.buttonSmallCornerRadius
+        size == .normal ? CDSSize.buttonCornerRadius.size : CDSSize.buttonSmallCornerRadius.size
     }
     
     var background: Color {
@@ -103,13 +100,13 @@ class CDSIconButtonStyleBuilder {
     
     private func secondaryBackground(for type: ButtonType) -> Color {
         switch type {
-        case .default: theme.colors.lightGray.color
+        case .default: CDSColor.lightGray.color
         case .stroked: .clear
         }
     }
     
     private func primaryBackground(for disabled: Bool) -> Color {
-        disabled ? theme.colors.lightGray.color : theme.colors.primary.color
+        disabled ? CDSColor.lightGray.color : CDSColor.primary.color
     }
     
     // Foreground
@@ -131,15 +128,15 @@ class CDSIconButtonStyleBuilder {
     }
     
     private func strokedPrimaryForeground(for disabled: Bool) -> Color {
-        disabled ? theme.colors.gray.color : theme.colors.primary.color
+        disabled ? CDSColor.gray.color : CDSColor.primary.color
     }
     
     private func primaryForeground(for disabled: Bool) -> Color {
-        disabled ? theme.colors.gray.color : theme.colors.white.color
+        disabled ? CDSColor.gray.color : CDSColor.white.color
     }
     
     private func secondaryForeground(for disabled: Bool) -> Color {
-        disabled ? theme.colors.gray.color : theme.colors.darkGray.color
+        disabled ? CDSColor.gray.color : CDSColor.darkGray.color
     }
     
     // MARK: - View Builders
@@ -149,7 +146,7 @@ class CDSIconButtonStyleBuilder {
         switch type {
         case .stroked:
             RoundedRectangle(cornerRadius: cornerRadius)
-                .stroke(theme.colors.lightGray.color, lineWidth: lineWidht)
+                .stroke(CDSColor.lightGray.color , lineWidth: lineWidht)
         default:
             EmptyView()
         }

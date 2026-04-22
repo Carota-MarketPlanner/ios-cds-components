@@ -8,8 +8,6 @@
 import SwiftUI
 
 class CDSLoadingCircleStyleBuilder {
-    @CDSThemeCore var theme: CDSTheme
-    
     // MARK: - Public Properties
     
     var opacity: CGFloat { 0.3 }
@@ -32,9 +30,9 @@ class CDSLoadingCircleStyleBuilder {
     public var color: Color {
         switch style {
         case .default(_):
-            theme.colors.primary.color
+            CDSColor.primary.color
         case .onBrand(_):
-            theme.colors.white.color
+            CDSColor.white.color
         }
     }
     
@@ -43,19 +41,19 @@ class CDSLoadingCircleStyleBuilder {
         case .default(let size), .onBrand(let size):
             switch size {
             case .tinny:
-                return theme.sizes.loadingCircleTinnySize
+                return CDSSize.loadingCircleTinnySize.size
                 
             case .small:
-                return theme.sizes.loadingCircleSmallSize
+                return CDSSize.loadingCircleSmallSize.size
                 
             case .medium:
-                return theme.sizes.loadingCircleMediumSize
+                return CDSSize.loadingCircleMediumSize.size
                 
             case .large:
-                return theme.sizes.loadingCircleLargeSize
+                return CDSSize.loadingCircleLargeSize.size
                 
             case .xlarge:
-                return theme.sizes.loadingCircleXlargeSize
+                return CDSSize.loadingCircleXlargeSize.size
             }
         }
     }
@@ -65,16 +63,16 @@ class CDSLoadingCircleStyleBuilder {
         case .default(let size), .onBrand(let size):
             switch size {
             case .tinny:
-                return theme.sizes.loadingCircleTinnyLineWidth
+                return CDSSize.loadingCircleTinnyLineWidth.size
                 
             case .small, .medium:
-                return theme.sizes.loadingCircleSmallMediumLineWidth
+                return CDSSize.loadingCircleSmallMediumLineWidth.size
                 
             case .large:
-                return theme.sizes.loadingCircleLargeLineWidth
+                return CDSSize.loadingCircleLargeLineWidth.size
                 
             case .xlarge:
-                return theme.sizes.loadingCircleXlargeLineWidth
+                return CDSSize.loadingCircleXlargeLineWidth.size
             }
         }
     }

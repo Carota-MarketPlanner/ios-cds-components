@@ -8,7 +8,6 @@
 import SwiftUI
 
 class CDSLabelStyleBuilder {
-    @CDSThemeCore var theme: CDSTheme
     
     typealias LabelType = CDSLabelStyle.CDSLabelType
     
@@ -34,21 +33,21 @@ class CDSLabelStyleBuilder {
     
     var color: Color {
         switch style {
-        case .primary: theme.colors.black.color
-        case .secondary: theme.colors.darkGray.color
-        case .onColor: theme.colors.white.color
+        case .primary: CDSColor.black.color
+        case .secondary: CDSColor.darkGray.color
+        case .onColor: CDSColor.white.color
         }
     }
     
     var font: Font {
         switch type {
-        case .largeTitle: theme.fonts.largeTitle.font
-        case .title: theme.fonts.title.font
-        case .subtitle: theme.fonts.subtitle.font
-        case .largeContent: theme.fonts.largeContent.font
-        case .content: theme.fonts.content.font
-        case .smallContent: theme.fonts.smallContent.font
-        case .tag: theme.fonts.tag.font
+        case .largeTitle: CDSText.largeTitle.font
+        case .title: CDSText.title.font
+        case .subtitle: CDSText.subtitle.font
+        case .largeContent: CDSText.largeContent.font
+        case .content: CDSText.content.font
+        case .smallContent: CDSText.smallContent.font
+        case .tag: CDSText.tag.font
         }
     }
 }

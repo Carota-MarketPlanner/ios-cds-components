@@ -46,6 +46,9 @@
 		DEB305D02F96C27600CCD3D8 /* CDSText.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB305B12F96C27600CCD3D8 /* CDSText.swift */; };
 		DEB305D12F96C27600CCD3D8 /* CDSTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB305B32F96C27600CCD3D8 /* CDSTheme.swift */; };
 		DEB305D22F96C27600CCD3D8 /* CDSThemeCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB305B42F96C27600CCD3D8 /* CDSThemeCore.swift */; };
+		DEBAAED12F99419B008ED033 /* CDSPropertie.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBAAED02F994170008ED033 /* CDSPropertie.swift */; };
+		DEBAAED32F995408008ED033 /* CDSFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBAAED22F995404008ED033 /* CDSFont.swift */; };
+		DEBAAED52F995444008ED033 /* DefaultTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBAAED42F995440008ED033 /* DefaultTheme.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -119,6 +122,9 @@
 		DEB305B32F96C27600CCD3D8 /* CDSTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDSTheme.swift; sourceTree = "<group>"; };
 		DEB305B42F96C27600CCD3D8 /* CDSThemeCore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDSThemeCore.swift; sourceTree = "<group>"; };
 		DEB305B62F96C27600CCD3D8 /* .gitkeep */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
+		DEBAAED02F994170008ED033 /* CDSPropertie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDSPropertie.swift; sourceTree = "<group>"; };
+		DEBAAED22F995404008ED033 /* CDSFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDSFont.swift; sourceTree = "<group>"; };
+		DEBAAED42F995440008ED033 /* DefaultTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultTheme.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -356,6 +362,7 @@
 		DEB305B22F96C27600CCD3D8 /* Properties */ = {
 			isa = PBXGroup;
 			children = (
+				DEBAAED22F995404008ED033 /* CDSFont.swift */,
 				DEB305AF2F96C27600CCD3D8 /* CDSColor.swift */,
 				DEB305B02F96C27600CCD3D8 /* CDSSize.swift */,
 				DEB305B12F96C27600CCD3D8 /* CDSText.swift */,
@@ -367,8 +374,10 @@
 			isa = PBXGroup;
 			children = (
 				DEB305B22F96C27600CCD3D8 /* Properties */,
+				DEBAAED42F995440008ED033 /* DefaultTheme.swift */,
 				DEB305B32F96C27600CCD3D8 /* CDSTheme.swift */,
 				DEB305B42F96C27600CCD3D8 /* CDSThemeCore.swift */,
+				DEBAAED02F994170008ED033 /* CDSPropertie.swift */,
 			);
 			path = Theme;
 			sourceTree = "<group>";
@@ -556,7 +565,9 @@
 				DEB305C12F96C27600CCD3D8 /* CDSIconButtonStyleBuilder.swift in Sources */,
 				DEB305C22F96C27600CCD3D8 /* CDSLabel.swift in Sources */,
 				DEB305C32F96C27600CCD3D8 /* CDSLabelStyle.swift in Sources */,
+				DEBAAED52F995444008ED033 /* DefaultTheme.swift in Sources */,
 				DEB305C42F96C27600CCD3D8 /* CDSLabelStyleBuilder.swift in Sources */,
+				DEBAAED12F99419B008ED033 /* CDSPropertie.swift in Sources */,
 				DEB305C52F96C27600CCD3D8 /* CDSLoadingCircle.swift in Sources */,
 				DEB305C62F96C27600CCD3D8 /* CDSLoadingCircleStyle.swift in Sources */,
 				DEB305C72F96C27600CCD3D8 /* CDSLoadingCircleStyleBuilder.swift in Sources */,
@@ -565,6 +576,7 @@
 				DEB305CA2F96C27600CCD3D8 /* CDSTextFieldStyle.swift in Sources */,
 				DEB305CB2F96C27600CCD3D8 /* CDSTextFieldStyleBuilder.swift in Sources */,
 				DEB305CC2F96C27600CCD3D8 /* Color+HEX.swift in Sources */,
+				DEBAAED32F995408008ED033 /* CDSFont.swift in Sources */,
 				DEB305CD2F96C27600CCD3D8 /* Font+Custom.swift in Sources */,
 				DEB305CE2F96C27600CCD3D8 /* CDSColor.swift in Sources */,
 				DEB305CF2F96C27600CCD3D8 /* CDSSize.swift in Sources */,

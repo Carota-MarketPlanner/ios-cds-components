@@ -7,27 +7,23 @@
 
 import SwiftUI
 
-public protocol CDSColor {
-    var black: Hex { get }
-    var darkGray: Hex { get }
-    var gray: Hex { get }
-    var lightGray: Hex { get }
-    var white: Hex { get }
-    var primary: Hex { get }
-    var secondary: Hex { get }
-    var error: Hex { get }
+public enum CDSColor: String {
+    case black
+    case darkGray
+    case gray
+    case lightGray
+    case white
+    case primary
+    case secondary
+    case error
 }
 
-public struct Hex {
-    public var hex: String
-    
-    public init(_ hex: String) {
-        self.hex = hex
+extension CDSColor: CDSPropertie {
+    public var properties: [String: Any] {
+        CDSThemeConfig.shared.theme.colors
     }
     
     public var color: Color {
-        Color(hex: hex)
+        Color(hex: getPropertie(field: self.rawValue, ofType: String.self))
     }
 }
-
-

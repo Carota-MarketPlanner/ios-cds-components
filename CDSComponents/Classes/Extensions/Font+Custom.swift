@@ -10,9 +10,8 @@ import SwiftUI
 extension Font {
     
     static func register(font: CDSFont) {
-        @CDSThemeCore var theme: CDSTheme
         
-        if let fontPath = theme.bundle.path(forResource: font.fileName, ofType: font.extension),
+        if let fontPath = CDSThemeConfig.shared.theme.bundle.path(forResource: font.fileName, ofType: font.extension),
            let fontData = NSData(contentsOfFile: fontPath),
            let dataProvider = CGDataProvider(data: fontData),
            let font = CGFont(dataProvider) {

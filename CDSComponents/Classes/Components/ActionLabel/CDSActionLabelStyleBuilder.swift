@@ -8,8 +8,6 @@
 import SwiftUI
 
 class CDSActionLabelStyleBuilder {
-    @CDSThemeCore var theme: CDSTheme
-    
     // MARK: - Private Properties
     
     private var content: [CDSActionLabelStyle]
@@ -22,9 +20,9 @@ class CDSActionLabelStyleBuilder {
     
     // MARK: - Public View Properties
     
-    var foreground: Color { theme.colors.darkGray.color }
-    var tint: Color { theme.colors.primary.color }
-    var font: Font { theme.fonts.actionLabelFont.font }
+    var foreground: Color { CDSColor.darkGray.color }
+    var tint: Color { CDSColor.primary.color }
+    var font: Font { CDSText.actionLabelFont.font }
     
     var textLinks: String {
         var string = String()
