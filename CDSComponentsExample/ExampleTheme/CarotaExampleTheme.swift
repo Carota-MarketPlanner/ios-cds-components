@@ -52,8 +52,9 @@ public class CarotaExampleTheme: CDSTheme {
         // TextField
         "textFieldIconSize": 20,
         "textFieldLineWidth": 1,
-        "textFieldHeight": 29,
-        "textFieldSpacing": 10,
+        "textFieldHeight": 58,
+        "textFieldCornerRadius": 16,
+        "textFieldSpacing": 8,
         // LoadingCircle
         "loadingCircleTinnySize": 16,
         "loadingCircleSmallSize": 24,

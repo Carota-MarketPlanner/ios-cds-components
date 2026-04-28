@@ -26,6 +26,7 @@ public enum CDSSize: String {
     case textFieldIconSize
     case textFieldLineWidth
     case textFieldHeight
+    case textFieldCornerRadius
     case textFieldSpacing
     // LoadingCircle
     case loadingCircleTinnySize

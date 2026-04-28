@@ -37,7 +37,7 @@ struct ContentView: View {
                 
                 CDSLabel(style: .secondary(Constants.textField, type: .largeContent))
                 
-                VStack(spacing: 33) {
+                VStack(spacing: 24) {
                     CDSTextField(Constants.name, text: $name, type: .capitalized)
                     CDSTextField(Constants.email, text: $email, type: .email, state: .error)
                     CDSTextField(Constants.cellphone, text: $cellphone, type: .number)
