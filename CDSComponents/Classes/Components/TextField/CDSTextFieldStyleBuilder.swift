@@ -27,6 +27,8 @@ class CDSTextFieldStyleBuilder: ObservableObject {
     
     var textFieldFont: Font { CDSText.textFieldFont.font }
     
+    var textFieldRadius: CGFloat { CDSSize.textFieldCornerRadius.size }
+    
     var image: String { secureRevealed ? "eye" : "eye.slash.fill" }
     
     var titleForeground: Color { CDSColor.darkGray.color }

@@ -35,7 +35,7 @@
 		DEB305C52F96C27600CCD3D8 /* CDSLoadingCircle.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB305A22F96C27600CCD3D8 /* CDSLoadingCircle.swift */; };
 		DEB305C62F96C27600CCD3D8 /* CDSLoadingCircleStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB305A32F96C27600CCD3D8 /* CDSLoadingCircleStyle.swift */; };
 		DEB305C72F96C27600CCD3D8 /* CDSLoadingCircleStyleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB305A42F96C27600CCD3D8 /* CDSLoadingCircleStyleBuilder.swift */; };
-		DEB305C82F96C27600CCD3D8 /* CDSAnimatedTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB305A62F96C27600CCD3D8 /* CDSAnimatedTitle.swift */; };
+		DEB305C82F96C27600CCD3D8 /* CDSFloatingText.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB305A62F96C27600CCD3D8 /* CDSFloatingText.swift */; };
 		DEB305C92F96C27600CCD3D8 /* CDSTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB305A72F96C27600CCD3D8 /* CDSTextField.swift */; };
 		DEB305CA2F96C27600CCD3D8 /* CDSTextFieldStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB305A82F96C27600CCD3D8 /* CDSTextFieldStyle.swift */; };
 		DEB305CB2F96C27600CCD3D8 /* CDSTextFieldStyleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB305A92F96C27600CCD3D8 /* CDSTextFieldStyleBuilder.swift */; };
@@ -110,7 +110,7 @@
 		DEB305A22F96C27600CCD3D8 /* CDSLoadingCircle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDSLoadingCircle.swift; sourceTree = "<group>"; };
 		DEB305A32F96C27600CCD3D8 /* CDSLoadingCircleStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDSLoadingCircleStyle.swift; sourceTree = "<group>"; };
 		DEB305A42F96C27600CCD3D8 /* CDSLoadingCircleStyleBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDSLoadingCircleStyleBuilder.swift; sourceTree = "<group>"; };
-		DEB305A62F96C27600CCD3D8 /* CDSAnimatedTitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDSAnimatedTitle.swift; sourceTree = "<group>"; };
+		DEB305A62F96C27600CCD3D8 /* CDSFloatingText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDSFloatingText.swift; sourceTree = "<group>"; };
 		DEB305A72F96C27600CCD3D8 /* CDSTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDSTextField.swift; sourceTree = "<group>"; };
 		DEB305A82F96C27600CCD3D8 /* CDSTextFieldStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDSTextFieldStyle.swift; sourceTree = "<group>"; };
 		DEB305A92F96C27600CCD3D8 /* CDSTextFieldStyleBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDSTextFieldStyleBuilder.swift; sourceTree = "<group>"; };
@@ -329,7 +329,7 @@
 		DEB305AA2F96C27600CCD3D8 /* TextField */ = {
 			isa = PBXGroup;
 			children = (
-				DEB305A62F96C27600CCD3D8 /* CDSAnimatedTitle.swift */,
+				DEB305A62F96C27600CCD3D8 /* CDSFloatingText.swift */,
 				DEB305A72F96C27600CCD3D8 /* CDSTextField.swift */,
 				DEB305A82F96C27600CCD3D8 /* CDSTextFieldStyle.swift */,
 				DEB305A92F96C27600CCD3D8 /* CDSTextFieldStyleBuilder.swift */,
@@ -571,7 +571,7 @@
 				DEB305C52F96C27600CCD3D8 /* CDSLoadingCircle.swift in Sources */,
 				DEB305C62F96C27600CCD3D8 /* CDSLoadingCircleStyle.swift in Sources */,
 				DEB305C72F96C27600CCD3D8 /* CDSLoadingCircleStyleBuilder.swift in Sources */,
-				DEB305C82F96C27600CCD3D8 /* CDSAnimatedTitle.swift in Sources */,
+				DEB305C82F96C27600CCD3D8 /* CDSFloatingText.swift in Sources */,
 				DEB305C92F96C27600CCD3D8 /* CDSTextField.swift in Sources */,
 				DEB305CA2F96C27600CCD3D8 /* CDSTextFieldStyle.swift in Sources */,
 				DEB305CB2F96C27600CCD3D8 /* CDSTextFieldStyleBuilder.swift in Sources */,
