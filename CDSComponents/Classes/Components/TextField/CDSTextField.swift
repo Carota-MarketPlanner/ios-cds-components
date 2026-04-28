@@ -14,6 +14,10 @@ public struct CDSTextField: View {
     
     var title: String
     
+    var isFloating: Bool {
+        isFocused || !text.isEmpty
+    }
+    
     public init(
         _ title: String,
         text: Binding<String>,
@@ -26,13 +30,21 @@ public struct CDSTextField: View {
     }
     
     public var body: some View {
-        VStack(alignment: .leading, spacing: styleBuilder.spacing) {
-            CDSAnimatedTitle(
-                title: title,
-                selected: !isFocused && text.isEmpty
-            )
-            .font(styleBuilder.textFieldFont)
-            .foregroundColor(styleBuilder.titleForeground)
+        ZStack(alignment: .leading) {
+            RoundedRectangle(cornerRadius: styleBuilder.textFieldRadius)
+                .strokeBorder(
+                    styleBuilder.borderColor(for: isFocused),
+                    lineWidth: styleBuilder.lineWidth
+                )
+                .frame(height: styleBuilder.height)
+                .mask(
+                    ZStack(alignment: .leading) {
+                        Rectangle()
+                        floatingPlaceholder(background: .black)
+                            .blendMode(.destinationOut)
+                    }
+                )
+                .compositingGroup()
             
             HStack {
                 Group {
@@ -43,14 +55,26 @@ public struct CDSTextField: View {
                 
                 if !text.isEmpty { styleBuilder.eyeButton }
             }
-            .frame(height: styleBuilder.height)
+            .padding(.horizontal, styleBuilder.textFieldRadius)
             
-            Rectangle()
-                .frame(height: styleBuilder.lineWidth)
-                .foregroundColor(styleBuilder.borderColor(for: isFocused))
+            floatingPlaceholder()
         }
+        .contentShape(Rectangle())
+        .padding(.top, styleBuilder.spacing)
         .onTapGesture {
             isFocused = true
         }
+    }
+    
+    @ViewBuilder
+    private func floatingPlaceholder(background: Color = .clear) -> some View {
+        CDSFloatingText(
+            title: title,
+            selected: isFloating,
+            background: background
+        )
+        .font(styleBuilder.textFieldFont)
+        .foregroundColor(styleBuilder.titleForeground)
+        .allowsHitTesting(false)
     }
 }
